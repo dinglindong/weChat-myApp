@@ -7,3 +7,8 @@
 <button bindtap="enterA">进入a页面</button>
 <button bindtap="enterB">进入b页面</button>
 <button bindtap="enterC">进入c页面</button>
+
+<!--index.wxml-->
+<include src="header.wxml"/>
+<view>Body</view>
+<include src="footer.wxml"/>
