@@ -147,5 +147,10 @@ Page({
     wx.navigateTo({
       url: '../demo_view/demo_view'
     })
+  },
+  jump_wxs(){
+    wx.navigateTo({
+      url: '../demo_wxs/index',
+    })
   }
 })

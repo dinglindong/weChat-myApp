@@ -14,7 +14,9 @@
     "pages/demo_view/quote/quote",
     "pages/demo_view/quote/apages/apages.a",
     "pages/demo_view/quote/bpages/bpages.b",
-    "pages/demo_view/quote/cpages/cpages.c"
+    "pages/demo_view/quote/cpages/cpages.c",
+    "pages/demo_wxs/index",
+    "pages/components/common"
   ],
   "window": {
     "backgroundTextStyle": "light",

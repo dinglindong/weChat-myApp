@@ -1,0 +1,20 @@
+<!--pages/demo_wxs/index.wxml-->
+ <wxs src="./index.wxs" module="index" /> 
+
+<view>{{index.msg}}</view>
+<view>{{index.FOO}}</view>
+<view>{{index.bar(index.FOO)}}</view>
+
+ <!-- <wxs src="./login.wxs" module="login"/>  -->
+
+<wxs module="m1">
+  var getMax = function(array){
+    var max = undefined;
+    for(var i=0;i<array.length;i++){
+      max = max ===undefined ? array[i]:(max>=array[i]?max:array[i])
+    }
+    return max
+  }
+  module.exports.getMax = getMax;
+</wxs>
+<view>{{m1.getMax(array)}}</view>
