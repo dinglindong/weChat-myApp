@@ -7,7 +7,24 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block> 
   </view>
+
+  <button style="margin:20px" bindtap="jump_view">view页面</button>
+
+  <view style="margin-top:200rpx">{{message}}</view>
+
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+
+  <view>{{text}}</view>
+  <view>{{array[0].msg}}</view>
+  <buttom class="btn" bindtap="viewTap">点击我</buttom>
+  <view>{{num}}</view>
+  <buttom class="btn" bindtap="changeNum">点击我</buttom>
+  <view>{{array[2].text}}</view>
+  <buttom class="btn" bindtap="changeItemInArray">点击我</buttom>
+   <view>{{object.text}}</view>
+  <buttom class="btn" bindtap="changeItemInObject">点击我</buttom>
+   <view>{{newField.text}}</view>
+  <buttom class="btn" bindtap="addNewField">点击我</buttom>
 </view>

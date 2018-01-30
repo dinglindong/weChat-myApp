@@ -19,3 +19,11 @@
 .usermotto {
   margin-top: 200px;
 }
+.btn {
+  background:#f00;
+  width:200rpx;
+  color:#fff;
+  text-align: center;
+  border-radius:20rpx;
+  margin:10px;
+}

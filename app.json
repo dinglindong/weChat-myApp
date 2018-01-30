@@ -1,29 +1,38 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/discover/discover",
     "pages/message/message",
     "pages/personal/persoanal",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/demo_view/demo_view",
+    "pages/demo_view/data/data",
+    "pages/demo_view/list/list",
+    "pages/demo_view/condition/condition",
+    "pages/demo_view/template/template",
+    "pages/demo_view/event/event",
+    "pages/demo_view/quote/quote"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
   },
   "tabBar": {
-    "color":"#626f8c",
-    "selectedColor":"#2899e6",
-    "backgroundColor":"#fff",
-    "borderStyle":"white",
-    "position":"tobuttom",
+    "color": "#626f8c",
+    "selectedColor": "#2899e6",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "position": "tobuttom",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "images/mainIndex_off0.png",
-        "selectedIconPath":"images/mainIndex_on.png"
+        "selectedIconPath": "images/mainIndex_on.png"
       },
       {
         "pagePath": "pages/discover/discover",
@@ -50,5 +59,12 @@
         "selectedIconPath": "images/mine_on.png"
       }
     ]
-  }
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
 }

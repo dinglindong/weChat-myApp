@@ -1,6 +1,8 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function (options) {
+    // console.log(options);
+    // console.log('初始化小程序执行onLaunch方法,并且只执行一次！');
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -32,6 +34,16 @@ App({
         }
       }
     })
+  },
+  onShow: function (options){
+    // console.log(options);
+    // console.log('当小程序从后台进入前台显示，会触发当前方法onShow');
+  },
+  onHide:function(){
+    // console.log('当小程序前台进入后台，触发onHide');
+  },
+  onError:function(){
+    // console.log('小程序脚本错误，或者调用API失败的时候触发');
   },
   globalData: {
     userInfo: null

@@ -1,0 +1,48 @@
+<!--pages/demo_view/data/data.wxml-->
+<!-- 我们要在这个页面写一些视图层的demo -->
+
+<view>{{message}}</view>
+
+<view wx:for="{{array}}">{{item}}</view>
+
+<view wx:if="{{view == 'WEBVIEW'}}">WEBVIEW</view>
+<view wx:elif="{{view == 'APP'}}">APP</view>
+<view wx:else="{{view == 'MINA'}}">MINA</view>
+
+
+<template name="staffName">
+  <view>
+    FirstName: {{firstName}}, LastName: {{lastName}}
+  </view>
+</template>
+
+<template is="staffName" data="{{...staffA}}"></template>
+<template is="staffName" data="{{...staffB}}"></template>
+<template is="staffName" data="{{...staffC}}"></template>
+
+<button bindtap="add">{{count}}</button>
+<button bindtap="rest">重置</button>
+
+<view wx:if="{{isShow}}">看看我是否现实</view>
+<view hidden="{{isShow?true:false}}">Hidden</view>
+<view>{{a+b}} + {{c}} +d</view>
+<view wx:if="{{length>5}}">长度大于5我就能看见了</view>
+<view>{{"hello " +view}}</view>
+<view>{{object.key}} {{array[0]}}</view>
+<view wx:for="{{[zero,1,2,3,4,5]}}">{{item}}</view>
+
+<template name="objectCombine">
+  <view>
+   for赋值为 {{for}}
+   bar赋值为 {{bar}}
+  </view>
+</template>
+<template is="objectCombine" data="{{for:a,bar:b}}"></template>
+
+<view wx:for="{{[1,2,3]}} ">
+  {{item}}
+</view>
+相等
+<view wx:for="{{[1,2,3] + ' '}}">
+  {{item}}
+</view>
