@@ -20,7 +20,8 @@ Page({
     object:{
       key:'hello'
     },
-    zero:0
+    zero:0,
+    text:'这里面是引用模板····'
   },
   add:function(){
     this.setData({
@@ -55,6 +56,11 @@ Page({
   jumpEvent: function(){
     wx.navigateTo({
       url: './event/event',
+    })
+  },
+  jumpQuote(){
+    wx.navigateTo({
+      url: './quote/quote',
     })
   },
   /**

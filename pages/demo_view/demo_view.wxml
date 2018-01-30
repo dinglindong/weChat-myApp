@@ -7,5 +7,9 @@
 <button class="btn" bindtap="jumpCondition">条件渲染</button>
 <button class="btn" bindtap="jumpTemplate">模板</button>
 <button class="btn" bindtap="jumpEvent">事件</button>
-<button class="btn" bindtap="jumpData">引用</button>
+<button class="btn" bindtap="jumpQuote">引用</button>
 
+
+<template name="item">
+  <text>{{text}}</text>
+</template>

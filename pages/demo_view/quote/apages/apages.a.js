@@ -1,4 +1,4 @@
-// pages/demo_view/quote/quote.js
+// pages/demo_view/quote/apages/apages.a.js
 Page({
 
   /**
@@ -7,21 +7,7 @@ Page({
   data: {
   
   },
-  enterA:function() { 
-    wx.navigateTo({
-      url: './apages/apages.a',
-    })
-  },
-  enterB: function () {
-    wx.navigateTo({
-      url: './bpages/bpages.b',
-    })
-  },
-  enterC: function () {
-    wx.navigateTo({
-      url: './cpages/cpages.c',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

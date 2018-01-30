@@ -11,7 +11,10 @@
     "pages/demo_view/condition/condition",
     "pages/demo_view/template/template",
     "pages/demo_view/event/event",
-    "pages/demo_view/quote/quote"
+    "pages/demo_view/quote/quote",
+    "pages/demo_view/quote/apages/apages.a",
+    "pages/demo_view/quote/bpages/bpages.b",
+    "pages/demo_view/quote/cpages/cpages.c"
   ],
   "window": {
     "backgroundTextStyle": "light",

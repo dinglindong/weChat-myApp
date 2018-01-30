@@ -1,2 +1,9 @@
 <!--pages/demo_view/quote/quote.wxml-->
-<text>pages/demo_view/quote/quote.wxml</text>
+
+<import src="./../demo_view.wxml" />
+
+<template is="item" data="{{text:'forbar'}}"></template>
+
+<button bindtap="enterA">进入a页面</button>
+<button bindtap="enterB">进入b页面</button>
+<button bindtap="enterC">进入c页面</button>
