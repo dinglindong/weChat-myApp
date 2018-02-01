@@ -1,4 +1,4 @@
-/* pages/components/common.wxss */
+  /* pages/components/common.wxss */
 /* 这里的样式只应用于这个自定义组件 */
 .inner {
   color: red;

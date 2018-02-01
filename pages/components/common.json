@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "component-tag-name": "path/to/the/custom/component"
+    "component-tag-name": "/pages/components/common"
   }
 }
