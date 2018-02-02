@@ -16,7 +16,8 @@
     "pages/demo_view/quote/bpages/bpages.b",
     "pages/demo_view/quote/cpages/cpages.c",
     "pages/demo_wxs/index",
-    "pages/components/common"
+    "components/Dialog/dialog",
+    "pages/demo_layer/layer"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -7,7 +7,8 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block> 
   </view>
-  
+
+  <button style="margin:20px" bindtap="jump_layer">Click Layer</button>
   <button style="margin:20px" bindtap="jump_wxs">wxs页面</button>
   <button style="margin:20px" bindtap="jump_view">view页面</button>
 
