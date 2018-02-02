@@ -11,22 +11,22 @@ Component({
     // 弹窗标题
     title: {            // 属性名
       type: String,     // 类型（必填），目前接受的类型包括：String, Number, Boolean, Object, Array, null（表示任意类型）
-      value: '标题'     // 属性初始值（可选），如果未指定则会根据类型选择一个
+      value: '标题a'     // 属性初始值（可选），如果未指定则会根据类型选择一个
     },
     // 弹窗内容
     content: {
       type: String,
-      value: '弹窗内容'
+      value: '弹窗内容a'
     },
     // 弹窗取消按钮文字
     cancelText: {
       type: String,
-      value: '取消'
+      value: '取消a'
     },
     // 弹窗确认按钮文字
     confirmText: {
       type: String,
-      value: '确定'
+      value: '确定a'
     }
   },
 
