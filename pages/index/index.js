@@ -157,5 +157,10 @@ Page({
     wx.navigateTo({
       url: '../demo_layer/layer',
     })
+  },
+  jump_rquest(){
+    wx.navigateTo({
+      url: '../demo_request/request',
+    })
   }
 })

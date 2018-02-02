@@ -1,0 +1,4 @@
+<!--pages/demo_request/request.wxml-->
+
+
+<button bindtap="request">点击发送请求测试</button>
