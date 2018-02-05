@@ -1,4 +1,8 @@
 <!--pages/demo_request/request.wxml-->
 
-
+<view>
+    <image src="{{src}}" ></image>
+</view>
 <button bindtap="request">点击发送请求测试</button>
+<button bindtap="mapShow">点击测试地图功能</button>
+<button bindtap="openPhoto">打开相册</button>
