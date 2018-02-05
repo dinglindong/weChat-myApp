@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    src:''
+    src:'',
+    imgHeight:'',
+    imgWidth:''
   },
 
   /**
@@ -67,6 +69,55 @@ Page({
         t.setData({
           src: tempFilePaths
         });
+      }
+    })
+  },
+  vuiewPhoto(){
+    let t = this;
+    wx.previewImage({
+      current: 'https://www.baidu.com/img/bd_logo1.png', // 当前显示图片的http链接
+      urls: ['https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=e9449e382d9759ee4a5067cd8ac0242b/94cad1c8a786c9179e80a80cc23d70cf3bc75700.jpg', 'https://www.baidu.com/img/bd_logo1.png', 'https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/whfpf%3D268%2C152%2C50/sign=aaa5e59e084f78f0805ec9b31f0c3863/9d82d158ccbf6c81d1425722b73eb13532fa4086.jpg','https://baikebcs.bdimg.com/adpic/reci_2018_1_270x150_fabu_2.jpg'] // 需要预览的图片http链接列表
+    })
+  },
+  infoPhoto(){
+    let t = this;
+    wx.chooseImage({
+      success: function (res) {
+        t.setData({
+          src: res.tempFilePaths
+        });
+        wx.getImageInfo({
+          src: res.tempFilePaths[0],
+          success: function (res) {
+            t.setData({
+              imgHeight: res.height,
+              imgWidth: res.width
+            });
+            console.log(res)
+          }
+        })
+      }
+    })
+  },
+  savePhoto(){
+    wx.downloadFile({
+      url:'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      success:function(res){
+        let path = res.tempFilePath
+        wx.saveImageToPhotosAlbum({
+          filePath: path,
+          success(res) {
+            console.log(res)
+          },
+          fail(res) {
+            console.log(res)
+          },
+          complete(res) {
+            console.log(res)
+          }
+        })
+      },fail:function(res){
+        console.log(res)
       }
     })
   },
