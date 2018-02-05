@@ -18,7 +18,8 @@
     "pages/demo_wxs/index",
     "components/Dialog/dialog",
     "pages/demo_layer/layer",
-    "pages/demo_request/request"
+    "pages/demo_request/request",
+    "pages/scroll-view/scroll-view"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -38,14 +39,14 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "images/mainIndex_off0.png",
+        "iconPath": "images/mainIndex_off.png",
         "selectedIconPath": "images/mainIndex_on.png"
       },
       {
         "pagePath": "pages/discover/discover",
         "text": "发现",
-        "iconPath": "images/discover_off.png",
-        "selectedIconPath": "images/discover_on.png"
+        "iconPath": "images/discover_off01.png",
+        "selectedIconPath": "images/discover_on01.png"
       },
       {
         "pagePath": "pages/logs/logs",

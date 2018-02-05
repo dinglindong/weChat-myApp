@@ -1,5 +1,52 @@
 <!--pages/discover/discover.wxml-->
+<view class="page-body">
+  <!--搜索框  -->
+  <view class="searchBox">
+    <view class="searchText">
+      <icon class="searchIcon" type="search" size="30"></icon>
+      <text>椎间孔镜 | </text>
+      <text>椎间孔镜 | </text>
+      <text>椎间孔镜 | </text>
+    </view>
+    <button class="searchBtn">搜索</button>
+  </view>
 
-<view>
-  这个是发现页面
+  <!--滚动图  -->
+  <swiper class="banner" indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="150"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!--滚动列表  -->
+  <view class="page-section">
+    <view class="page-section-spacing">
+      <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll">
+        <view class="scroll-view-item_H" wx:for="{{images}}">
+          <image src="{{item}}"></image>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+</view>
+
+
+
+
+<view class="page-section-spacing">
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item demo-text-1">1</view>
+    <view class="flex-item demo-text-2">1</view>
+    <view class="flex-item demo-text-3">1</view>
+  </view>
+</view>
+
+<view class="flex-wrp" style="height: 300px;flex-direction:column;">
+  <view class="flex-item bc_green">1</view>
+  <view class="flex-item bc_red">2</view>
+  <view class="flex-item bc_blue">3</view>
 </view>

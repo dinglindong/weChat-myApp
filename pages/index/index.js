@@ -162,5 +162,10 @@ Page({
     wx.navigateTo({
       url: '../demo_request/request',
     })
+  },
+  scrollPage(){
+    wx.navigateTo({
+      url: '../scroll-view/scroll-view',
+    })
   }
 })

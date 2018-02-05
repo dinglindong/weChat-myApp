@@ -1,1 +1,72 @@
-/* pages/discover/discover.wxss */
+body {
+  background:#aaa;
+}
+.searchBox {
+    padding: 0 20rpx;
+    height: 85rpx;
+    line-height: 85rpx;
+}
+.searchIcon {
+    vertical-align: middle; 
+    margin:15rpx; 
+    float:left;
+}
+.searchText {
+    float: left;
+    width: 585rpx;
+    height: 85rpx;
+    overflow: hidden;
+    background: hsla(0,0%,80%,.2) url(//img50.allinmd.cn/index/searchBorder.png) no-repeat;
+    background-size: contain;
+    font-size: 30rpx;
+    color: #a0a0a0;
+    vertical-align: top;
+}
+.searchText text {
+    font-size:35rpx;
+    float:left;
+}
+.searchBtn {
+    float: left;
+    background: #3caefa;
+    border-radius: 0 6rpx 6rpx 0;
+    width: 125rpx;
+    height: 85rpx;
+    line-height: 85rpx;
+    font-size: 30rpx;
+    color: #fff;
+}
+/*列表部分  */
+.flex-wrp{
+  margin-top: 60rpx;
+  display:flex;
+}
+/*banner部分  */
+.banner {
+  margin:20rpx;
+  text-align: center;
+}
+.columnList image {
+  width:200rpx;
+  height:100rpx;
+}
+.page-section-spacing{
+  margin-top: 60rpx;
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  height: 300rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  width: 205rpx;
+  height: 114rpx;
+  margin-left:20rpx;
+  border-radius:15rpx;
+}
+.scroll-view-item_H image{
+   width: 205rpx; 
+   height: 114rpx; 
+}

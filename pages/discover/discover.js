@@ -5,7 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    imgUrls: [
+      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+    ],
+    images: [
+      '//img50.allinmd.cn/v3/discover/entrance7.png',
+      '//img50.allinmd.cn/v3/discover/entrance1.png',  
+      '//img50.allinmd.cn/v3/discover/entrance8.png', 
+      '//img50.allinmd.cn/v3/discover/entrance4.png', 
+      '//img50.allinmd.cn/v3/discover/entrance3.png', 
+      '//img50.allinmd.cn/v3/discover/entrance6.png',
+      '//img50.allinmd.cn/v3/discover/entrance5.png'
+    ]
+    },
+    indicatorDots: false,
+    autoplay: false,
+    interval: 5000,
+    duration: 1000
   },
 
   /**
