@@ -94,7 +94,7 @@ Page({
   onShareAppMessage: function () {
     return {
       "title":"分享转发666",
-      "path": "pages/discover/discover"
+      "path": "pages/discover/discover?id=123456"
     }
     // console.log('只有定义了该函数右上角才有"转发"按钮样式');
     // 方法内返回一个Object{title:'',path:''}

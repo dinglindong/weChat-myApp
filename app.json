@@ -24,7 +24,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "唯医网",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true,
     "onReachBottomDistance": 50

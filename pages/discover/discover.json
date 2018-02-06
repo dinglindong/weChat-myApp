@@ -1,1 +1,5 @@
-{}
+{
+  "navigationBarTitleText": "发现页面",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
+}
