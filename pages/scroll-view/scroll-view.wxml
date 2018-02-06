@@ -1,12 +1,2 @@
 
-  <view class="page-body">
-    <view class="page-section">
-      <view class="page-section-spacing">
-        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll">
-          <view class="scroll-view-item_H" wx:for="{{images}}">
-            <image src="{{item}}"></image>
-          </view>
-        </scroll-view>
-      </view>
-    </view>
-  </view>
+<view class="hide{{showView?'show':''}}" animation="{{animationData}}" bindtap="onChangeShowState" style="background:red;height:100rpx;width:100rpx"></view>

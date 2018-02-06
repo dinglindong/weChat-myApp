@@ -1,37 +1,66 @@
-var order = ['demo1', 'demo2', 'demo3']
 Page({
   data: {
-    toView: 'green',
-    images: ['//img50.allinmd.cn/v3/discover/entrance7.png', '//img50.allinmd.cn/v3/discover/entrance1.png', '//img50.allinmd.cn/v3/discover/entrance8.png', '//img50.allinmd.cn/v3/discover/entrance4.png', '//img50.allinmd.cn/v3/discover/entrance3.png', '//img50.allinmd.cn/v3/discover/entrance6.png','//img50.allinmd.cn/v3/discover/entrance5.png']
+    animationData: {},
+    showView:true
   },
-  upper: function(e) {
-    console.log(e)
+  onShow: function () {
+    var animation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'ease-in-out',
+      delay:400,
+      transformOrigin: "50% 50%",
+    })
+    this.animation = animation
+
+    // animation.rotate(360).step()
+
+    // this.setData({
+    //   animationData: animation.export()
+    // })
+
+    setTimeout(function () {
+      animation.translate(200).step().translateY(300).step().rotate(180).scale(2, 2).step().rotate(0).scale(0.5, 0.5).step()
+      this.setData({
+        animationData: animation.export()
+      })
+    }.bind(this), 1000)
   },
-  lower: function(e) {
-    console.log(e)
+  onReady: function () {
+    //获得dialog组件
+    // this.dialog = document.getElementById("#dialog");
   },
-  scroll: function(e) {
-    console.log(e)
-  },
-  scrollToTop: function(e) {
-    this.setAction({
-      scrollTop: 0
+  onTap() {
+    this.animation.translate(0).scale(2, 2).step()
+    this.setData({
+      animationData: this.animation.export()
     })
   },
-  tap: function(e) {
-    for (var i = 0; i < order.length; ++i) {
-      if (order[i] === this.data.toView) {
-        this.setData({
-          toView: order[i + 1],
-          scrollTop: (i + 1) * 200
-        })
-        break
-      }
-    }
-  },
-  tapMove: function(e) {
+  onChangeShowState(){
     this.setData({
-      scrollTop: this.data.scrollTop + 10
+      showView:false
+    });
+  },
+  rotateAndScale: function () {
+    // 旋转同时放大
+    this.animation.rotate(45).scale(2, 2).step()
+    this.setData({
+      animationData: this.animation.export()
+    })
+  },
+  rotateThenScale: function () {
+    // 先旋转后放大
+    this.animation.rotate(45).step()
+    this.animation.scale(2, 2).step()
+    this.setData({
+      animationData: this.animation.export()
+    })
+  },
+  rotateAndScaleThenTranslate: function () {
+    // 先旋转同时放大，然后平移
+    this.animation.rotate(45).scale(2, 2).step()
+    this.animation.translate(100, 100).step({ duration: 1000 })
+    this.setData({
+      animationData: this.animation.export()
     })
   }
 })

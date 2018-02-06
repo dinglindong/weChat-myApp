@@ -1,41 +1,40 @@
 <!--pages/discover/discover.wxml-->
 <view class="page-body">
   <!--搜索框  -->
-  <view class="searchBox">
+   <view class="searchBox">
     <view class="searchText">
       <icon class="searchIcon" type="search" size="30"></icon>
       <text>椎间孔镜 | </text>
       <text>椎间孔镜 | </text>
       <text>椎间孔镜 | </text>
     </view>
-    <button class="searchBtn">搜索</button>
+    <button class="searchBtn">搜索</button> 
   </view>
 
   <!--滚动图  -->
-  <swiper class="banner" indicator-dots="{{indicatorDots}}"
+   <swiper class="banner" indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor  }}"
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}">
+    <block wx:for="{{imgUrls}}" wx:key="*this">
       <swiper-item>
         <image src="{{item}}" class="slide-image" width="355" height="150"/>
       </swiper-item>
     </block>
-  </swiper>
+  </swiper> 
+  
 
   <!--滚动列表  -->
-  <view class="page-section">
-    <view class="page-section-spacing">
-      <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll">
-        <view class="scroll-view-item_H" wx:for="{{images}}">
-          <image src="{{item}}"></image>
-        </view>
-      </scroll-view>
-    </view>
-  </view>
-
+  <swiper indicator-dots="{{indicatorDots}}">
+    <scroll-view class="scroll-view_H" scroll-x="true">
+      <view class="scroll-view-item_H" wx:for="{{images}}" wx:key="*this">
+        <image src="{{item}}" />
+      </view>
+    </scroll-view>
+  </swiper>
+  
 </view>
 
 
-
+<!-- 
 
 <view class="page-section-spacing">
   <view class="flex-wrp" style="flex-direction:row;">
@@ -49,4 +48,4 @@
   <view class="flex-item bc_green">1</view>
   <view class="flex-item bc_red">2</view>
   <view class="flex-item bc_blue">3</view>
-</view>
+</view> -->

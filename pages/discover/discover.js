@@ -11,17 +11,22 @@ Page({
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
     ],
     images: [
-      '//img50.allinmd.cn/v3/discover/entrance7.png',
-      '//img50.allinmd.cn/v3/discover/entrance1.png',  
-      '//img50.allinmd.cn/v3/discover/entrance8.png', 
-      '//img50.allinmd.cn/v3/discover/entrance4.png', 
-      '//img50.allinmd.cn/v3/discover/entrance3.png', 
-      '//img50.allinmd.cn/v3/discover/entrance6.png',
-      '//img50.allinmd.cn/v3/discover/entrance5.png'
-    ]
-    },
-    indicatorDots: false,
-    autoplay: false,
+      '/images/discover/entrance1.png',
+      '/images/discover/entrance2.png',
+      '/images/discover/entrance3.png',
+      '/images/discover/entrance4.png',
+      '/images/discover/entrance5.png',
+      '/images/discover/entrance8.png',
+      '/images/discover/entrance1.png',
+      '/images/discover/entrance2.png',
+      '/images/discover/entrance3.png',
+      '/images/discover/entrance4.png',
+      '/images/discover/entrance5.png',
+      '/images/discover/entrance8.png',
+    ],
+    indicatorDots: true,
+    indicatorColor: 'rgba(255, 0, 0, .3)',
+    autoplay: true,
     interval: 5000,
     duration: 1000
   },
@@ -30,9 +35,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+ 
+    wx.showModal({
+      title: '提示',
+      content: '这是一个模态弹窗',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   },
-
+ 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
