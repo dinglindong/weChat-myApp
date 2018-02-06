@@ -1,3 +1,8 @@
+/*
+* author： Wei xin
+* feature： 获取格式化的时间用 util.formatTime(new Date)
+*
+*/
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -14,13 +19,9 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-module.exports = {
-  formatTime: formatTime
-}
-
 /*
 * author： Lindong Ding
-* feature： 获取当前页面的url和带参数的url,微信给我们暴露的getCurrentPages对象
+* feature： 获取当前页面的url和带参数的url,微信给我们暴露的getCurrentPages对象util.getCurrentPages()
 *
 */
 /*获取当前页url*/
@@ -50,6 +51,7 @@ function getCurrentPageUrlWithArgs() {
 }
 
 module.exports = {
+  formatTime: formatTime,
   getCurrentPageUrl: getCurrentPageUrl,
   getCurrentPageUrlWithArgs: getCurrentPageUrlWithArgs
 }
