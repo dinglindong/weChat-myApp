@@ -208,7 +208,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(comm.formatTime(new Date));
+    // console.log(comm.formatTime(new Date));
     //options可以获取当前页面的url里面带的参数
     // console.log(options);
     //获取当前页面内容

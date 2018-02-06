@@ -1,4 +1,5 @@
 <!--pages/discover/discover.wxml-->
+<wxs src="../../filter/dateFr.wxs" module="dateFr" /> 
 <view class="body">
   <!--搜索框  -->
   <view class="searchBox" style="background:#fff;">
@@ -32,7 +33,6 @@
   
   <!--列表数据  -->
   <view class="flex-wrp" style="flex-direction:column;">
-
     <view class="flex-item" wx:for="{{data_list}}" wx:key="*this">
 
       <view>
@@ -48,8 +48,8 @@
       </view>
 
       <view style="height:50rpx">
-        <text class="text">{{item.recommendDate}}</text>
-        <navigator class="hotActivity">特色栏目<view class="icon"></view></navigator>
+        <text class="text"> {{dateFr.cut()}}</text>
+        <navigator url="/pages/demo_view/demo_view" hover-class="navigator-hover" class="hotActivity">特色栏目<view class="icon"></view></navigator>
       </view>
 
     </view>
