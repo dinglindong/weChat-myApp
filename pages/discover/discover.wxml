@@ -1,7 +1,7 @@
 <!--pages/discover/discover.wxml-->
-<view class="page-body">
+<view class="body">
   <!--搜索框  -->
-   <view class="searchBox">
+  <view class="searchBox" style="background:#fff;">
     <view class="searchText">
       <icon class="searchIcon" type="search" size="30"></icon>
       <text>椎间孔镜 | </text>
@@ -22,16 +22,41 @@
   </swiper> 
   
 
-  <!--滚动列表  -->
-  <swiper indicator-dots="{{indicatorDots}}">
+  <!--滚动列表左右  -->
     <scroll-view class="scroll-view_H" scroll-x="true">
       <view class="scroll-view-item_H" wx:for="{{images}}" wx:key="*this">
         <image src="{{item}}" />
       </view>
     </scroll-view>
-  </swiper>
   
+  
+  <!--列表数据  -->
+  <view class="flex-wrp" style="flex-direction:column;">
+
+    <view class="flex-item" wx:for="{{data_list}}" wx:key="*this">
+
+      <view>
+        <navigator url="/pages/demo_view/demo_view" hover-class="navigator-hover">
+          <image src="{{item.picUrl}}"/> 
+        </navigator>
+      </view>
+
+      <view class="goingText">
+        <navigator url="/pages/demo_view/demo_view" hover-class="navigator-hover">
+          <text>{{item.itemTitle}}</text> 
+        </navigator>
+      </view>
+
+      <view style="height:50rpx">
+        <text class="text">{{item.recommendDate}}</text>
+        <navigator class="hotActivity">特色栏目<view class="icon"></view></navigator>
+      </view>
+
+    </view>
+  </view>
+
 </view>
+ 
 
 
 <!-- 

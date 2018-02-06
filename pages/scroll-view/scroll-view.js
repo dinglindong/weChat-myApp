@@ -1,7 +1,21 @@
 Page({
   data: {
     animationData: {},
-    showView:true
+    showView:true,
+    images: [
+      '/images/discover/entrance1.png',
+      '/images/discover/entrance2.png',
+      '/images/discover/entrance3.png',
+      '/images/discover/entrance4.png',
+      '/images/discover/entrance5.png',
+      '/images/discover/entrance8.png',
+      '/images/discover/entrance1.png',
+      '/images/discover/entrance2.png',
+      '/images/discover/entrance3.png',
+      '/images/discover/entrance4.png',
+      '/images/discover/entrance5.png',
+      '/images/discover/entrance8.png',
+    ]
   },
   onShow: function () {
     var animation = wx.createAnimation({
