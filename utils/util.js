@@ -19,11 +19,14 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+
 /*
 * author： Lindong Ding
 * feature： 获取当前页面的url和带参数的url,微信给我们暴露的getCurrentPages对象util.getCurrentPages()
 *
 */
+
 /*获取当前页url*/
 function getCurrentPageUrl() {
   var pages = getCurrentPages()    //获取加载的页面
@@ -50,8 +53,38 @@ function getCurrentPageUrlWithArgs() {
   return urlWithArgs
 }
 
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+
+/* 将超出长度的字符串加。。。
+* @param str
+* @param len
+* @returns { string }
+*/
+function getStrLen(str, len) {
+  if (typeof str != 'undefined') {
+    var strlen = 0,
+      s = ''
+    for (var i = 0; i < str.length; i++) {
+      s = s + str.charAt(i)
+      if (str.charCodeAt(i) > 128) {
+        strlen = strlen + 2
+        if (strlen >= len) {
+          return s.substring(0, s.length - 1) + '...'
+        }
+      } else {
+        strlen = strlen + 1
+        if (strlen >= len) {
+          return s.substring(0, s.length - 2) + '...'
+        }
+      }
+    }
+    return s
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
   getCurrentPageUrl: getCurrentPageUrl,
-  getCurrentPageUrlWithArgs: getCurrentPageUrlWithArgs
+  getCurrentPageUrlWithArgs: getCurrentPageUrlWithArgs,
+  getStrLen: getStrLen
 }
