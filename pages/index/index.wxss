@@ -1,4 +1,6 @@
 /**index.wxss**/
+
+@import "../logs/logs.wxss";
 .userinfo {
   display: flex;
   flex-direction: column;

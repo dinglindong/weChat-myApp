@@ -1,3 +1,6 @@
+.container {
+  background:forestgreen
+}
 .log-list {
   display: flex;
   flex-direction: column;
@@ -6,3 +9,6 @@
 .log-item {
   margin: 10rpx;
 }
+
+
+

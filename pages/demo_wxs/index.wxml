@@ -1,5 +1,9 @@
 <!--pages/demo_wxs/index.wxml-->
- <wxs src="./index.wxs" module="index" /> 
+<wxs src="./index.wxs" module="index" /> 
+
+<wxs src="../../filter/dateFr.wxs" module="date" />
+
+<view class="time">{{date.local_time()}}</view>
 
 <view>{{index.msg}}</view>
 <view>{{index.FOO}}</view>
@@ -17,4 +21,5 @@
   }
   module.exports.getMax = getMax;
 </wxs>
+<view>66666666666666666666</view>
 <view>{{m1.getMax(array)}}</view>
