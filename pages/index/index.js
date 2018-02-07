@@ -20,11 +20,12 @@ Page({
       },
       {
         text:'数组显示'
-      }
+      },
     ],
     object:{
       text:'init Object data'
-    }
+    },
+    color: 'red'
   },
   //事件处理函数
   bindViewTap: function() {
