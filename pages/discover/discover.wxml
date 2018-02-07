@@ -25,7 +25,7 @@
 
   <!--滚动列表左右  -->
     <scroll-view class="scroll-view_H" scroll-x="true">
-      <view class="scroll-view-item_H" wx:for="{{images}}" wx:key="*this">
+      <view class="scroll-view-item_H" wx:for="{{images}}" wx:key="item">
         <image src="{{item}}" />
       </view>
     </scroll-view>
@@ -33,7 +33,7 @@
   
   <!--列表数据  -->
   <view class="flex-wrp" style="flex-direction:column;">
-    <view class="flex-item" wx:for="{{data_list}}" wx:key="*this">
+    <view class="flex-item" wx:for="{{data_list}}" wx:key="item">
 
       <view>
         <navigator url="/pages/demo_view/demo_view" hover-class="navigator-hover">
