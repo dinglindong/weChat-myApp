@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const comm = require('comm.js');
+const comm = require('../../utils/comm.js');
 Page({
   data: {
     message: 'Hello MINA!',
