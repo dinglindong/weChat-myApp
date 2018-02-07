@@ -56,11 +56,12 @@ var local_time = function () {
   if (day < 10) {
     day = "0" + day;
   }
-  var time = local.toTimeString().substr(0, 8);
+  var time = local.toTimeString().substring(0, 8);
   var local_time = year + "-" + month + "-" + day + " " + time;
   return local_time;
 }
 
 module.exports = {
-  cut: cuts
+  cut: cuts,
+  local_time: local_time
 }

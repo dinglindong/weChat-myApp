@@ -48,7 +48,7 @@
       </view>
 
       <view style="height:50rpx">
-        <text class="text"> {{dateFr.cut()}}</text>
+        <text class="text"> {{dateFr.local_time()}}</text>
         <navigator url="/pages/demo_view/demo_view" hover-class="navigator-hover" class="hotActivity">特色栏目<view class="icon"></view></navigator>
       </view>
 
