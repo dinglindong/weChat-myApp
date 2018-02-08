@@ -22,10 +22,12 @@
     "pages/scroll-view/scroll-view"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "唯医网",
+    "navigationBarBackgroundColor": "#ff0",
     "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "唯医网",
+    "navigationStyle":"default",
+    "backgroundColor":"#0f0",
+    "backgroundTextStyle": "light",
     "enablePullDownRefresh": true,
     "onReachBottomDistance": 50
   },

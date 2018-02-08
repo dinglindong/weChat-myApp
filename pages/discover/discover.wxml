@@ -2,7 +2,7 @@
 <wxs src="../../filter/dateFr.wxs" module="dateFr" /> 
 <view class="body">
   <!--搜索框  -->
-  <view class="searchBox" style="background:#fff;">
+  <view class="searchBox">
     <view class="searchText">
       <icon class="searchIcon" type="search" size="30"></icon>
       <text>椎间孔镜 | </text>
