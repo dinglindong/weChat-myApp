@@ -65,7 +65,7 @@ Page({
       success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths
-        console.log(res,11111111111111);
+        // console.log(res,11111111111111);
         t.setData({
           src: tempFilePaths
         });
@@ -100,24 +100,45 @@ Page({
     })
   },
   savePhoto(){
-    wx.downloadFile({
-      url:'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      success:function(res){
-        let path = res.tempFilePath
+    let t = this;
+    wx.saveImageToPhotosAlbum({
+      filePath: t.data.src[0],
+        success(res) {
+          console.log(res)
+        }
+      })
+  },
+  saveImg: function () {
+    // wx.downloadFile({
+    //   url: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+    //   success: function (res) {
+    //     let path = res.tempFilePath
+    //     wx.saveImageToPhotosAlbum({
+    //       filePath: path,
+    //       success(res) {
+    //         console.log(res)
+    //       },
+    //       fail(res) {
+    //         console.log(res)
+    //       },
+    //       complete(res) {
+    //         console.log(res)
+    //       }
+    //     })
+    //   }, fail: function (res) {
+    //     console.log(res)
+    //   }
+    // })
+    wx.getImageInfo({
+      src: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      success: function (ret) {
+        var path = ret.path;
         wx.saveImageToPhotosAlbum({
           filePath: path,
-          success(res) {
-            console.log(res)
-          },
-          fail(res) {
-            console.log(res)
-          },
-          complete(res) {
-            console.log(res)
+          success(result) {
+            console.log(result)
           }
         })
-      },fail:function(res){
-        console.log(res)
       }
     })
   },
