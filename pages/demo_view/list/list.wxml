@@ -1,18 +1,18 @@
 <!--pages/demo_view/list/list.wxml-->
 
-<view wx:for="{{array}}">{{index}} {{item.message}}</view>
+<view wx:for="{{array}}"  wx:key="item">{{index}} {{item.message}}</view>
 
-<view wx:for="{{array}}" wx:for-index="idx" wx:for-item="itemName">{{idx}} {{itemName.message}}</view>
+<view wx:for="{{array}}" wx:for-index="idx" wx:for-item="itemName"  wx:key="item">{{idx}} {{itemName.message}}</view>
 
- <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i">
-  <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j">
+ <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i"  wx:key="item">
+  <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j"  wx:key="item">
     <view wx:if="{{i <= j}}">
       {{i}} * {{j}} = {{i * j}}
     </view>
   </view>
 </view> 
 
-<block wx:for="{{[1,2,3]}}">
+<block wx:for="{{[1,2,3]}}"  wx:key="item">
   <view>{{index}}: </view>
   <view>{{item}}</view>
 </block>

@@ -3,7 +3,7 @@
 
 <view>{{message}}</view>
 
-<view wx:for="{{array}}">{{item}}</view>
+<view wx:for="{{array}}" wx:key="item">{{item}}</view>
 
 <view wx:if="{{view == 'WEBVIEW'}}">WEBVIEW</view>
 <view wx:elif="{{view == 'APP'}}">APP</view>
@@ -29,7 +29,7 @@
 <view wx:if="{{length>5}}">长度大于5我就能看见了</view>
 <view>{{"hello " +view}}</view>
 <view>{{object.key}} {{array[0]}}</view>
-<view wx:for="{{[zero,1,2,3,4,5]}}">{{item}}</view>
+<view wx:for="{{[zero,1,2,3,4,5]}}" wx:key="item">{{item}}</view>
 
 <template name="objectCombine">
   <view>
@@ -39,10 +39,10 @@
 </template>
 <template is="objectCombine" data="{{for:a,bar:b}}"></template>
 
-<view wx:for="{{[1,2,3]}} ">
+<view wx:for="{{[1,2,3]}} " wx:key="item">
   {{item}}
 </view>
 相等
-<view wx:for="{{[1,2,3] + ' '}}">
+<view wx:for="{{[1,2,3] + ' '}}" wx:key="item">
   {{item}}
 </view>
