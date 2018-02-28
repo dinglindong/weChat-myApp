@@ -1,0 +1,23 @@
+.container{
+  /* background:#f00; */
+  /* height:13000px; */
+}
+.string{
+  border:1px solid #f00;
+  width:500rpx;
+  height:100rpx;
+  text-align: center;
+}
+.footer {
+  
+  margin:40rpx;
+  text-align: center;
+}
+.btn {
+  height:80rpx;
+  line-height: 80rpx;
+  width:400rpx;
+  border-radius:80rpx;
+  background: #f27a71;
+  margin-top:40rpx;
+}

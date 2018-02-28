@@ -1,0 +1,10 @@
+/* pages/details/detalis.wxss */
+.string{
+  border:1px solid #f00;
+  width:500rpx;
+  height:100rpx;
+  text-align: center;
+}
+.mycanvas{
+  border:1px solid #f00; 
+}

@@ -1,0 +1,5 @@
+
+<view class="container">
+  <text class="string" hidden="{{hidden}}">{{strHtml}}</text>
+  <canvas canvas-id="myCanvas" class="mycanvas"/>
+</view>
