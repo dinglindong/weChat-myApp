@@ -1,5 +1,10 @@
 
 <view class="container">
   <text class="string" hidden="{{hidden}}">{{strHtml}}</text>
-  <canvas canvas-id="myCanvas" class="mycanvas"/>
+  <view class="box">
+    <canvas animation="{{animationData}}"canvas-id="myCanvas" class="mycanvas" style="{{scale}}"/>
+  </view>
+  <text hidden="{{hide}}">你是第30640920个参与者</text>
+  <button class="btn" bindtap="click" hidden="{{hide}}">{{message}}</button>
+  <navigator url="../index/index">预览分享图片</navigator>
 </view>

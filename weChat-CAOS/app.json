@@ -1,7 +1,8 @@
 {
-  "pages": [
-    "pages/start/start",
+  "pages": [    
     "pages/details/detalis",
+    "pages/start/start",
+  
     "pages/index/index",
     "pages/logs/logs"
   ],

@@ -9,7 +9,6 @@
   text-align: center;
 }
 .footer {
-  
   margin:40rpx;
   text-align: center;
 }
@@ -20,4 +19,22 @@
   border-radius:80rpx;
   background: #f27a71;
   margin-top:40rpx;
+}
+.section {
+  width:100%;
+}
+.section video {
+  width:100%;
+  height:224px;
+}
+.section .up,.section .down{
+  background:#000;
+  height:112px; 
+}
+.section .up{
+  position:absolute;
+  top:100px;
+}
+.section .down{
+  position:absolute;
 }

@@ -11,7 +11,12 @@ Page({
       "http://img1.imgtn.bdimg.com/it/u=4253527623,1282030340&fm=27&gp=0.jpg",
       "http://img1.imgtn.bdimg.com/it/u=1359502252,667448733&fm=27&gp=0.jpg",
       "http://img1.imgtn.bdimg.com/it/u=908224686,2536941373&fm=27&gp=0.jpg",
-    ]
+    ],
+    scale:'',
+    hide:'',
+    message:'查看我的头像位置',
+    falg:true,
+    animationData: {}
   },
 
   /**
@@ -19,7 +24,7 @@ Page({
    */
 
   onLoad: function (options) {
-    // this.init();
+    this.init();
     this.canvas(); 
   },
   init() {
@@ -41,20 +46,71 @@ Page({
     }
     printer()
   },
+  click(){
+    const ctx = wx.createCanvasContext('myCanvas')
+    var leX = 20,
+      leY = 20;
+    var timer = setInterval(function(){
+
+      ctx.drawImage("http://img1.imgtn.bdimg.com/it/u=4253527623,1282030340&fm=27&gp=0.jpg", 280, 10, leX, leY)
+      ctx.draw()
+      leX += 10;
+      leY += 10;
+      if(leX >60){
+        clearInterval(timer)
+      }
+    },100)
+    var animation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'ease',
+    })
+    this.animation = animation
+    animation.scale(2, 2).translate(-140, 80).step()
+
+    this.setData({
+      animationData: animation.export()
+    })
+
+    // if(this.data.falg){
+    //   this.setData({
+    //     hide: true
+    //   })
+    //   this.setData({
+    //     scale: 'transform:scale(2,2.5)',
+    //     message: '会看全景',
+    //     falg:false
+    //   })
+    //   this.setData({
+    //     hide: false
+    //   })
+  
+    // }else{
+    //   this.setData({
+    //     hide: true
+    //   })
+    //   this.setData({
+    //     scale: 'transform:scale(1,1)',
+    //     message: '查看我的头像位置',
+    //     falg: true
+    //   })
+    //   this.setData({
+    //     hide: false
+    //   })
+    // }
+    
+   
+  },
   canvas(){
-    // const ctx = wx.createCanvasContext('myCanvas')
-
-    // this.data.dataList.forEach(function (i) {
-    //   var randomX = Math.random() * 100;
-    //   var randomY = Math.random() * 100;
-    //   console.log(i)
-    //   ctx.drawImage(i, randomX, randomY, 20, 20)
-    //   ctx.drawImage(i, randomX, randomY, 20, 20)
-    //   ctx.drawImage(i, randomX, randomY, 20, 20)
-
-
-    //   ctx.draw()
-    // })  
+    const ctx = wx.createCanvasContext('myCanvas')
+    for(var i=0;i<300;i+=20){
+      for(var j=0;j<200;j+=20){ 
+        ctx.drawImage("http://img1.imgtn.bdimg.com/it/u=908224686,2536941373&fm=27&gp=0.jpg", i, j, 20, 20)
+      }
+    }
+     
+      ctx.drawImage("http://img1.imgtn.bdimg.com/it/u=4253527623,1282030340&fm=27&gp=0.jpg", 280, 10, 20, 20)
+    
+      ctx.draw()
     ///////////////////
 
     // //使用wx.createContext获取绘图上下文context

@@ -13,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.init();
+    this.init();
   },
   init(){
     var text = "国家主席习近平和亿万中国人民向世界发出邀请"  //预定文字
