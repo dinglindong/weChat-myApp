@@ -50,16 +50,16 @@ Page({
     const ctx = wx.createCanvasContext('myCanvas')
     var leX = 20,
       leY = 20;
-    var timer = setInterval(function(){
+    // var timer = setInterval(function(){
 
-      ctx.drawImage("http://img1.imgtn.bdimg.com/it/u=4253527623,1282030340&fm=27&gp=0.jpg", 280, 10, leX, leY)
-      ctx.draw()
-      leX += 10;
-      leY += 10;
-      if(leX >60){
-        clearInterval(timer)
-      }
-    },100)
+    //   ctx.drawImage("http://img1.imgtn.bdimg.com/it/u=4253527623,1282030340&fm=27&gp=0.jpg", 280, 10, leX, leY)
+    //   ctx.draw()
+    //   leX += 10;
+    //   leY += 10;
+    //   if(leX >60){
+    //     clearInterval(timer)
+    //   }
+    // },100)
     var animation = wx.createAnimation({
       duration: 1000,
       timingFunction: 'ease',
