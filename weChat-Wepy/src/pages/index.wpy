@@ -1,88 +1,189 @@
-<style>
-    .container{
-        background:#f00;
-    }
-    button{
-        margin:10px 0px;
-    }
+<style lang="scss">
+  .container{
+    /*background:#eff4f8;*/
+  }
 </style>
 
 <template>
-    <view>
-        <view class="container">
-            我是Index页面的数据，下面是两个引入组件
-            <button @tap="jumpComm">普通组件引用</button>
-            <button @tap="jumpRepeat">组件的循环渲染</button>
-            <button @tap="jumpComputed">computed计算属性</button>
-            <button @tap="jumpWatcher">watcher监听器</button>
-            <button @tap="jumpPropsStatic">propsStatic传值</button>
-            <button @tap="jumpPropsDynamic">propsDynamic传值</button>
-            <button @tap="jumpAjax">组件通信与交互</button>
-            <button @tap="jumpFunc">组件自定义事件处理函数</button>
-            <button @tap="jumpSlot">slot组件内容分发插槽</button>
-        </view>
-    </view>
+  <view class="container">
+    <Header></Header>
+    <Search></Search>
+    <Nav></Nav>
+    <Banner></Banner>
+    <Dynamic></Dynamic>
+    <Template></Template>
+  </view>
 </template>
 
 <script>
-import wepy from 'wepy';
+  import wepy from 'wepy'
+  import Header from '@/components/Header'
+  import Search from "@/components/Search"
+  import Nav from "@/components/Nav"
+  import Banner from "@/components/Banner"
+  import Dynamic from "@/components/DynamicEntry"
+  import Template from "@/components/Template"
+  import Panel from '@/components/panel' // alias example
+  import Counter from 'counter' // alias example
+  import List from '../components/list' // aliasFields example
+  import moduleA from 'module-a' // aliasFields ignore module example
+  import Group from '../components/group'
+  import Toast from 'wepy-com-toast'
+  import testMixin from '../mixins/test'
 
-export default class Index extends wepy.page {
-    methods = {
-        jumpComm(){
-            console.log(11111);
-            wx.navigateTo({
-                url: './comm',
-            })
-        },
-        jumpRepeat(){
-            console.log(22222);
-            wx.navigateTo({
-                url: './circulation',
-            })
-        },
-        jumpComputed(){
-            console.log(33333);
-            wx.navigateTo({
-                url: './computed',
-            })
-        },
-        jumpWatcher(){
-            console.log(44444);
-            wx.navigateTo({
-                url: './watcher',
-            })
-        },
-        jumpPropsStatic(){
-            console.log(55555);
-            wx.navigateTo({
-                url: './propsStatic',
-            })
-        },
-        jumpPropsDynamic(){
-            console.log(66666);
-            wx.navigateTo({
-                url: './propsDynamic',
-            })
-        },
-        jumpAjax(){
-            console.log(77777);
-            wx.navigateTo({
-                url: './watcher',
-            })
-        },
-        jumpFunc(){
-            console.log(88888);
-            wx.navigateTo({
-                url: './watcher',
-            })
-        },
-        jumpSlot(){
-            console.log(99999);
-            wx.navigateTo({
-                url: './watcher',
-            })
-        }
+  console.log('moduleA ignored: ', moduleA) // => moduleA ignored: {}
+
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '首页'
     }
-}
+    components = {
+      Header:Header,
+      Search:Search,
+      Nav:Nav,
+      Banner:Banner,
+      Dynamic:Dynamic,
+      Template:Template,
+      panel: Panel,
+      counter1: Counter,
+      counter2: Counter,
+      list: List,
+      group: Group,
+      toast: Toast
+    }
+
+    mixins = [testMixin]
+
+    data = {
+      mynum: 20,
+      userInfo: {
+        nickName: '加载中...'
+      },
+      normalTitle: '原始标题',
+      setTimeoutTitle: '标题三秒后会被修改',
+      count: 0,
+      netrst: '',
+      groupList: [
+        {
+          id: 1,
+          name: '点击改变',
+          list: [
+            {
+              childid: '1.1',
+              childname: '子项，点我改变'
+            }, {
+              childid: '1.2',
+              childname: '子项，点我改变'
+            }, {
+              childid: '1.3',
+              childname: '子项，点我改变'
+            }
+          ]
+        },
+        {
+          id: 2,
+          name: '点击改变',
+          list: [
+            {
+              childid: '2.1',
+              childname: '子项，点我改变'
+            }, {
+              childid: '2.2',
+              childname: '子项，点我改变'
+            }, {
+              childid: '2.3',
+              childname: '子项，点我改变'
+            }
+          ]
+        },
+        {
+          id: 3,
+          name: '点击改变',
+          list: [
+            {
+              childid: '3.1',
+              childname: '子项，点我改变'
+            }
+          ]
+        }
+      ]
+    }
+
+    computed = {
+      now () {
+        return +new Date()
+      }
+    }
+
+    methods = {
+      plus () {
+        this.mynum++
+      },
+      toast () {
+        let promise = this.$invoke('toast', 'show', {
+          title: '自定义标题',
+          img: 'https://raw.githubusercontent.com/kiinlam/wetoast/master/images/star.png'
+        })
+
+        promise.then((d) => {
+          console.log('toast done')
+        })
+      },
+      tap () {
+        console.log('do noting from ' + this.$name)
+      },
+      communicate () {
+        console.log(this.$name + ' tap')
+
+        this.$invoke('counter2', 'minus', 45, 6)
+        this.$invoke('counter1', 'plus', 45, 6)
+
+        this.$broadcast('index-broadcast', 1, 3, 4)
+      },
+      request () {
+        let self = this
+        let i = 10
+        let map = ['MA==', 'MQo=', 'Mg==', 'Mw==', 'NA==', 'NQ==', 'Ng==', 'Nw==', 'OA==', 'OQ==']
+        while (i--) {
+          wepy.request({
+            url: 'https://www.madcoder.cn/tests/sleep.php?time=1&t=css&c=' + map[i] + '&i=' + i,
+            success: function (d) {
+              self.netrst += d.data + '.'
+              self.$apply()
+            }
+          })
+        }
+      },
+      counterEmit (...args) {
+        let $event = args[args.length - 1]
+        console.log(`${this.$name} receive ${$event.name} from ${$event.source.$name}`)
+      }
+    }
+
+    events = {
+      'index-emit': (...args) => {
+        let $event = args[args.length - 1]
+        console.log(`${this.$name} receive ${$event.name} from ${$event.source.$name}`)
+      }
+    }
+
+    onLoad() {
+      let self = this
+      this.$parent.getUserInfo(function (userInfo) {
+        if (userInfo) {
+          self.userInfo = userInfo
+        }
+        self.normalTitle = '标题已被修改'
+
+        self.setTimeoutTitle = '标题三秒后会被修改'
+        setTimeout(() => {
+          self.setTimeoutTitle = '到三秒了'
+          self.$apply()
+        }, 3000)
+
+        self.$apply()
+      })
+    }
+  }
 </script>

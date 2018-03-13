@@ -1,0 +1,33 @@
+module.exports = {
+  text: 'This is from wxs',
+  filterStr: function (kv) {
+    var _act = '';
+    if (kv.isAward == 1) {
+      _act = '获奖';
+    } else if (kv.isAttend == 1) {
+      _act = '参赛';
+    } else if (kv.isHot == 1) {
+      _act = '最热';
+    } else if (kv.isNew == 1) {
+      _act = '最新';
+    } else if (kv.tplPath == 31 || kv.tplPath == 32 || kv.tplPath == 127) {
+      _act = 'PDF';
+    }
+    return _act;
+  },
+  filterType:function(kv){
+    var _act = '';
+    if (kv.isAward == 1) {
+      _act = 'al-contentAward';
+    } else if (kv.isAttend == 1) {
+      _act = 'al-contentJoin';
+    } else if (kv.isHot == 1) {
+      _act = 'al-contentHotest';
+    } else if (kv.isNew == 1) {
+      _act = 'al-contentNewest';
+    } else if (kv.tplPath == 31 || kv.tplPath == 32 || kv.tplPath == 127) {
+      _act = 'al-contentPdf';
+    }
+    return _act;
+  }
+};
