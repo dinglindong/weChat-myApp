@@ -1,5 +1,5 @@
 <!--components/Banner/banner.wxml-->
-<view class="my-class">
+<view class="my-class" bindtap="onTap">
   {{innerText}}
 </view>
  <slot></slot> 

@@ -3,6 +3,9 @@
 const app = getApp()
 const comm = require('../../utils/comm.js');
 Page({
+  onMyEvent: function (e) {
+    console.log(e)
+  },
   data: {
     message: 'Hello MINA!',
     motto: 'Hello World',
@@ -28,6 +31,7 @@ Page({
     color: 'red'
   },
   //事件处理函数
+ 
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
