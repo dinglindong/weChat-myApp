@@ -1,0 +1,14 @@
+<!--components/Banner/banner.wxml-->
+<view class="my-class">
+  {{innerText}}
+</view>
+ <slot></slot> 
+
+<!-- 下面隐藏对应index页面的隐藏 -->
+
+<!-- <slot name="before"></slot> 
+<view class="inner">
+  {{innerText}}
+</view>
+ <slot></slot> 
+<slot name="after"></slot>  -->

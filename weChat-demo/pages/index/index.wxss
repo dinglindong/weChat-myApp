@@ -29,3 +29,6 @@
   border-radius:20rpx;
   margin:10px;
 }
+.red-text {
+  color: red;
+}
