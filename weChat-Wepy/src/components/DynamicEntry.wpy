@@ -58,8 +58,9 @@
         </view>
       </repeat>
     </view>
+    <view class="scrollCont">
       <scroll-view class="scroll-view_H" scroll-x="true">
-        <view class="scrollCont">
+        <view>
           <repeat for="{{scrollList}}" key="index">
             <view class="scroll-view-item_H">
               <image src="{{item}}"></image>
@@ -67,6 +68,8 @@
           </repeat>
         </view>
       </scroll-view>
+    </view>
+
   </view>
 </template>
 

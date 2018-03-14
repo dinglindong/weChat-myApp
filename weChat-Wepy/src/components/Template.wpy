@@ -406,39 +406,24 @@
         responseStatus: true
       }
     }
-//    methods = {
-//      filters(){
-//        console.log(1111111111);
-//      }
-
-//    }
     onLoad(){
       this.contents();
     }
     contents(){
-      let t = this;
+      var t = this;
       wx.request({
         url: 'https://m.allinmd.cn/mcall/customer/recommendResourceItem/json_case/', //仅为示例，并非真实的接口地址
         data: {
-          paramJson:{
-            "customerId":"",
-            "pageIndex":1,
-            "pageSize":10,
-            "scene":10,
-            "sessionCustomerId":"",
-            "platformId":"1",
-            "flag":1,
-            "score":0
-          }
+          paramJson:{"customerId":"1399252409974","pageIndex":1,"pageSize":10,"scene":10,"sessionCustomerId":"1399252409974","platformId":"1","flag":1,"score":0}
         },
+        method:'GET',
         header: {
           'content-type': 'application/json' // 默认值
         },
         success: function(res) {
-          console.log('测试数据')
-          console.log(res.data)
           if(res.data && res.data.responseObject && res.data.responseObject.responseData && res.data.responseObject.responseData.data_list.length){
             t.dataList = res.data.responseObject.responseData.data_list;
+            t.$apply();
           }
         }
       })
