@@ -13,7 +13,7 @@
   </view>
 
   <!--滚动图  -->
-   <swiper class="banner" indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor  }}"
+   <swiper class="banner" indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}"
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{imgUrls}}" wx:key="*this">
       <swiper-item>

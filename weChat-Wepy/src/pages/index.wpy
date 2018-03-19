@@ -1,7 +1,5 @@
 <style lang="scss">
-  .container{
-    /*background:#eff4f8;*/
-  }
+
 </style>
 
 <template>
@@ -35,9 +33,11 @@
 
 
   export default class Index extends wepy.page {
+
     config = {
       navigationBarTitleText: '首页'
     }
+
     components = {
       Header:Header,
       Search:Search,

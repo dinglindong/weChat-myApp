@@ -18,3 +18,7 @@
 <block wx:for="{{[1,2,3,4,5]}}"  wx:key="item">
   <template is="{{item%2 ==0?'even':'odd'}}"></template>
 </block>
+<template is="msgItem" data="{{...item}}"/>
+<template is="msgItem" data="{{...item}}"/>
+<template is="msgItem" data="{{...item}}"/>
+<template is="msgItem" data="{{...item}}"/>

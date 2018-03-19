@@ -1,9 +1,8 @@
 {
-  "pages": [    
-    "pages/details/detalis",
+  "pages": [  
     "pages/start/start",
-  
     "pages/index/index",
+    "pages/details/detalis",
     "pages/logs/logs"
   ],
   "window": {

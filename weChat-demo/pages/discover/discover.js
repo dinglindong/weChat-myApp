@@ -239,6 +239,12 @@ Page({
       icon: 'loading',
       mask: false
     });
+     wx.showToast({
+      title: '成功',
+      icon: 'success',
+      duration: 2000,
+      mask:false
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

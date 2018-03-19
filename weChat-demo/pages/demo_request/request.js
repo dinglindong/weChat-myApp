@@ -109,26 +109,26 @@ Page({
       })
   },
   saveImg: function () {
-    // wx.downloadFile({
-    //   url: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-    //   success: function (res) {
-    //     let path = res.tempFilePath
-    //     wx.saveImageToPhotosAlbum({
-    //       filePath: path,
-    //       success(res) {
-    //         console.log(res)
-    //       },
-    //       fail(res) {
-    //         console.log(res)
-    //       },
-    //       complete(res) {
-    //         console.log(res)
-    //       }
-    //     })
-    //   }, fail: function (res) {
-    //     console.log(res)
-    //   }
-    // })
+    wx.downloadFile({
+      url: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      success: function (res) {
+        let path = res.tempFilePath
+        wx.saveImageToPhotosAlbum({
+          filePath: path,
+          success(res) {
+            console.log(res)
+          },
+          fail(res) {
+            console.log(res)
+          },
+          complete(res) {
+            console.log(res)
+          }
+        })
+      }, fail: function (res) {
+        console.log(res)
+      }
+    })
     wx.getImageInfo({
       src: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
       success: function (ret) {
