@@ -14,6 +14,7 @@
     "vuex": "^2.3.1"
   },
   "devDependencies": {
+    "axios": "^0.16.2",
     "mpvue-loader": "^1.0.2",
     "mpvue-webpack-target": "^1.0.0",
     "mpvue-template-compiler": "^1.0.1",

@@ -172,5 +172,11 @@ Page({
     wx.navigateTo({
       url: '../scroll-view/scroll-view',
     })
+  },
+  multimedia(){
+    wx.navigateTo({
+      url: '../multimedia/multimedia',
+    })
   }
+
 })

@@ -1,6 +1,11 @@
 /**index.wxss**/
 
 @import "../logs/logs.wxss";
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
 .userinfo {
   display: flex;
   flex-direction: column;

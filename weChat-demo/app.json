@@ -19,14 +19,16 @@
     "components/Dialog/dialog",
     "pages/demo_layer/layer",
     "pages/demo_request/request",
-    "pages/scroll-view/scroll-view"
+    "pages/scroll-view/scroll-view",
+    "pages/multimedia",
+    "pages/multimedia/multimedia"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ff0",
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "唯医网",
-    "navigationStyle":"default",
-    "backgroundColor":"#0f0",
+    "navigationStyle": "default",
+    "backgroundColor": "#0f0",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": true,
     "onReachBottomDistance": 50
