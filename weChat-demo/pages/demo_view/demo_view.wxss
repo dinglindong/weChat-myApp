@@ -1,9 +1,0 @@
-/* pages/demo_view.wxss */
-.header {
-  text-align: center;
-  margin:20px;
-}
-.btn {
-  margin:20px;
-  
-}

@@ -1,7 +1,0 @@
-/* pages/demo_request/request.wxss */
-button {
-  margin:10px;
-}
-image {
-  width:100%;
-}

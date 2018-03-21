@@ -1,5 +1,0 @@
-/* pages/demo_wxs/index.wxss */
-.time {
-  width:746rpx;
-  border:1px solid #f00;
-}

@@ -1,6 +1,0 @@
-<!--pages/demo_view/quote/cpages/cpages.c.wxml-->
-<text>我是C页面</text>
-<!-- C.wxml -->
-<import src="../bpages/bpages.b.wxml"/>
-<template is="A"/>  <!-- Error! Can not use tempalte when not import A. -->
-<template is="B"/>

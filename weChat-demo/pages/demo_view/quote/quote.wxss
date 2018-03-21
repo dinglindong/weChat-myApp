@@ -1,4 +1,0 @@
-/* pages/demo_view/quote/quote.wxss */
-button{
-  margin:20px;
-}

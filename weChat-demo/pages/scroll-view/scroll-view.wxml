@@ -1,8 +1,0 @@
-
-<view class="hide{{showView?'show':''}}" animation="{{animationData}}" bindtap="onChangeShowState" style="background:red;height:100rpx;width:100rpx"></view>
-
-<scroll-view class="scroll-view_H" scroll-x="true">
-  <view class="scroll-view-item_H" wx:for="{{images}}" wx:key="item">
-    <image src="{{item}}" />
-  </view>
-</scroll-view>
