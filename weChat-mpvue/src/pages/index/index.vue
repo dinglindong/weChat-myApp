@@ -72,7 +72,6 @@ export default {
 //      wx.request({
 //        url: 'https://m.allinmd.cn/mcall/cms/resource/json_list/', //仅为示例，并非真实的接口地址
 //        data: {paramJson:JSON.stringify({"channelId":0,"pageIndex":1,"pageSize":2,"sessionCustomerId":"1399252409974","customerId":"1399252409974","platformId":"1"})},
-//        method:'POST',
 //        header: {
 //          'content-type': 'application/json' // 默认值
 //        },
