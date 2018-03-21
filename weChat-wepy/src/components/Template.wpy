@@ -1,0 +1,435 @@
+<style>
+  .main{
+    width:100%;
+  }
+  .types{
+    text-align: right;
+    height: 32rpx;
+  }
+  .types text{
+    width: 110rpx;
+    height: 34rpx;
+    line-height: 34rpx;
+    font-size: 30rpx;
+    color: #909090;
+  }
+  .title{
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: inherit;
+    cursor: inherit;
+    color: #000;
+    word-break: break-all;
+    margin-top:20rpx;
+  }
+  .solt{
+    margin-top:30rpx;
+  }
+  .solt image{
+    width: 210rpx;
+    height: 153rpx;
+    margin-right:20rpx;
+    position: relative;
+  }
+  .info{
+    margin-top:20rpx;
+  }
+  .info .al-comm {
+    border-radius:2rpx;
+    font-size:27rpx;
+    padding:3rpx;
+  }
+  .info .al-contentNewest{
+    color: #9bcc4e;
+    border: 1px solid #9bcc4e;
+  }
+  .info .al-contentJoin{
+    color: #ffc107;
+    border: 1px solid #ffc107;
+  }
+  .info .al-contentAward{
+    color: #bd97f7;
+    border: 1px solid #bd97f7;
+  }
+  .info .al-contentPdf{
+    color: #f44336;
+    border: 1px solid #f44336;
+  }
+  .info .al-contentHotest{
+    color: #f44336;
+    border: 1px solid #f44336;
+  }
+  .info .al-contentAuthor {
+    margin:0 40rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .info .al-contentDelete {
+    color: transparent;
+    float: right;
+    height: 32rpx;
+    width: 40rpx;
+    margin-top: 3rpx;
+    background: url(//img50.allinmd.cn/index/btn_nointerest.png) no-repeat;
+    background-size: cover;
+  }
+  .module{
+    box-sizing: border-box;
+    padding: 40rpx 0;
+    background-color: #fff;
+    border-bottom: 1px solid #e4e9ed;
+    transition: background-color 0s linear .1s;
+    -webkit-transition: background-color 0s linear .1s;
+  }
+</style>
+
+<template>
+  <view class="main">
+    <repeat for="{{dataList}}" key="index">
+      <view class="module">
+        <view class="types">
+          <text>病例</text>
+        </view>
+
+        <view class="content">
+          <text class="title">{{item.itemTitle}}</text>
+
+          <view class="solt">
+            <image src="https://img05.allinmd.cn/public1/M00/63/C5/ooYBAFniMQeAdxiNAIdw3t9P52o234_c_t_300_200.jpg"></image>
+            <image src="https://img05.allinmd.cn/public1/M00/63/A3/oYYBAFniMQGAHis_AG_wXmm_mpM309_c_t_300_200.jpg"></image>
+            <image src="https://img05.allinmd.cn/public1/M00/63/C4/ooYBAFniMPCAZskZAHGsyq2kzHQ123_c_t_300_200.jpg"></image>
+          </view>
+
+          <view class="info">
+            <text class="al-comm {{mywxs.filterType(item)}}">{{mywxs.filterStr(item)}}</text>
+            <text class="al-contentAuthor">{{item.ownerName}}</text>
+            <text>{{item.browseNum}}</text>
+            <text class="al-contentDelete">X</text>
+          </view>
+        </view>
+      </view>
+    </repeat>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import mywxs from '../wxs/comm.wxs'
+  export default class Template extends wepy.component{
+    data = {
+      dataList:[],
+      responseObject: {
+        responseData: {
+          data_list: [
+            {
+              "ownerId": "1507991492736",
+              "itemAbstract": "车祸致左腕部疼痛伴活动受限19小时",
+              "actualCurrentStarLevel": "4.0",
+              "picNum": 5,
+              "browseNum": "259",
+              "currentScoreNum": "1",
+              "itemTitle": "左侧桡骨远端骨折",
+              "activityTagColor": "#3d3fbe",
+              "currentScore": "4.0",
+              "currentStarLevel": "4.0",
+              "ownerName": "马烨",
+              "activityTagName": "万例挑一",
+              "picUrl": "https://img05.allinmd.cn/public1/M00/63/C5/ooYBAFniMQeAdxiNAIdw3t9P52o234_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/63/A3/oYYBAFniMQGAHis_AG_wXmm_mpM309_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/63/C4/ooYBAFniMPCAZskZAHGsyq2kzHQ123_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/63/C4/ooYBAFniMOqAG_SqAGsrJgNQLSM819_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/63/A3/oYYBAFniMOKAZrECAFdR9Ir-OdA473_c_t_300_200.jpg",
+              "isNew": 0,
+              "itemType": "7",
+              "isHot": 1,
+              "itemId": "1507994998568",
+              "videoType": "",
+              "isShowActivityTag": 1,
+              "isAward": 0,
+              "tplPath": 0,
+              "playTime": "",
+              "isAttend": 0,
+              "videoDirection": "0",
+              "itemUrl": "https://m.allinmd.cn/html/m/case//2017/10/14/1507994998568.html"
+            },
+            {
+              "ownerId": "1502166535194",
+              "itemAbstract": "外伤致右髋关节疼痛、活动受限6小时。",
+              "actualCurrentStarLevel": "5.0",
+              "picNum": 18,
+              "browseNum": "26",
+              "currentScoreNum": "1",
+              "itemTitle": "股骨颈骨折人工关节置换肺栓病例分享",
+              "activityTagColor": "",
+              "currentScore": "5.0",
+              "currentStarLevel": "5.0",
+              "ownerName": "张胤",
+              "activityTagName": "",
+              "picUrl": "https://img05.allinmd.cn/public1/M01/71/84/oYYBAFqft4mAHKimAAHzPEm4r-A736_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/D2/oYYBAFqmThCAYxDyAAHxjOMRQso479_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/84/oYYBAFqftxuAQUDAABJKbEBNfXM777_c_t_300_200.png|https://img05.allinmd.cn/public1/M01/71/A2/ooYBAFqftxiADzcDABEt0K2r7t0018_c_t_300_200.png|https://img05.allinmd.cn/public1/M01/71/A2/ooYBAFqftwCAUjIdAAKB_CgTsaA899_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/83/oYYBAFqftvOALXHmAAE70I7olTc471_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/A2/ooYBAFqftvCAD2cRAAFAiA6uxxY632_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/83/oYYBAFqftuCAREQ_AAFLCPRxRS4576_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/A2/ooYBAFqftsOAFr1vAAGqJMlDfLc873_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/83/oYYBAFqftreAa3SMAAFhgE-_ExQ591_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/A2/ooYBAFqftrCAIVt-AAFgvKlyXls769_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/83/oYYBAFqftpOAFm3KAAIA4EmoOyw344_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/A2/ooYBAFqftpGAeM2NAAHzPEm4r-A397_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/83/oYYBAFqfto6AGVtOAAHxjOMRQso983_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/A1/ooYBAFqftmaARNitAAHpIFxZUAc611_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/83/oYYBAFqftmSAbUNoAADyLEj77LE410_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/A1/ooYBAFqftmKAS9MMAADItO0wGoE262_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/83/oYYBAFqftl-AAalfAAHpoMHX8q0375_c_t_300_200.jpg",
+              "isNew": 1,
+              "itemType": "7",
+              "isHot": 0,
+              "itemId": "1520415699991",
+              "videoType": "",
+              "isShowActivityTag": 0,
+              "isAward": 0,
+              "tplPath": 0,
+              "playTime": "",
+              "isAttend": 0,
+              "videoDirection": "0",
+              "itemUrl": "https://m.allinmd.cn/html/m/case//2018/03/07/1520415699991.html"
+            },
+            {
+              "ownerId": "1420790446008",
+              "itemAbstract": "",
+              "actualCurrentStarLevel": "4.0",
+              "picNum": 12,
+              "browseNum": "11",
+              "currentScoreNum": "1",
+              "itemTitle": "椎间孔镜治疗腰椎间盘突出症",
+              "activityTagColor": "",
+              "currentScore": "4.0",
+              "currentStarLevel": "4.0",
+              "ownerName": "郭子仪",
+              "activityTagName": "",
+              "picUrl": "https://vpro.allinmd.cn/1520834442175_1520834442_300_200.jpg?1520791501|https://img05.allinmd.cn/public1/M01/71/CB/oYYBAFqmExuAG6udAAJD4nX7JGw989_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/E9/ooYBAFqmEsiAcaZIAAL5ynYx53M203_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/CB/oYYBAFqmEsmAUUSCAARNoEIbGc0803_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/CB/oYYBAFqmEsiAKEkwAAOmxn1VaX8818_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/E9/ooYBAFqmEsmAen8WAAJzkibIOPc836_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/E9/ooYBAFqmEsqATv-IAAHS4rgI_Ow330_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/CB/oYYBAFqmEfaAStjnAAKJevve43Q400_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/E8/ooYBAFqmEfeAPQZOAAN1_MutAeQ955_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/CB/oYYBAFqmEfiAE1nfAAKuHn_QRP0322_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/E8/ooYBAFqmEfiABmxRAAhZ4GZY7as908_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/CB/oYYBAFqmEfmAFqFkAAglZA-s_nk245_c_t_300_200.jpg",
+              "isNew": 1,
+              "itemType": "7",
+              "isHot": 0,
+              "itemId": "1520832816488",
+              "videoType": "",
+              "isShowActivityTag": 0,
+              "isAward": 0,
+              "tplPath": 0,
+              "playTime": "00:00:09",
+              "isAttend": 1,
+              "videoDirection": "0",
+              "itemUrl": "https://m.allinmd.cn/html/m/case//2018/03/12/1520832816488.html"
+            },
+            {
+              "ownerId": "1431001068877",
+              "itemAbstract": "外伤致左锁骨区疼痛、肿胀、活动障碍2小时",
+              "actualCurrentStarLevel": "5.0",
+              "picNum": 2,
+              "browseNum": "109",
+              "currentScoreNum": "1",
+              "itemTitle": "左锁骨骨折切开复位固定术",
+              "activityTagColor": "#3d3fbe",
+              "currentScore": "5.0",
+              "currentStarLevel": "5.0",
+              "ownerName": "李大成",
+              "activityTagName": "万例挑一",
+              "picUrl": "https://img05.allinmd.cn/public1/M00/63/15/oYYBAFniAXGAUz_lAAIMXCRasEc610_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/63/36/ooYBAFniAWaAENGpAAHPsNR--T8521_c_t_300_200.jpg",
+              "isNew": 0,
+              "itemType": "7",
+              "isHot": 0,
+              "itemId": "1507983558824",
+              "videoType": "",
+              "isShowActivityTag": 1,
+              "isAward": 1,
+              "tplPath": 0,
+              "playTime": "",
+              "isAttend": 0,
+              "videoDirection": "0",
+              "itemUrl": "https://m.allinmd.cn/html/m/case//2017/10/14/1507983558824.html"
+            },
+            {
+              "ownerId": "1507724137198",
+              "itemAbstract": "左膝疼痛伴活动受限2年，加重6月",
+              "actualCurrentStarLevel": "4.0",
+              "picNum": 3,
+              "browseNum": "112",
+              "currentScoreNum": "1",
+              "itemTitle": "胫骨上端截骨矫形术",
+              "activityTagColor": "#3d3fbe",
+              "currentScore": "4.0",
+              "currentStarLevel": "4.0",
+              "ownerName": "沈孝天",
+              "activityTagName": "万例挑一",
+              "picUrl": "https://img05.allinmd.cn/public1/M00/60/5C/ooYBAFneGCuAJ69kAABeC2sYHy0226_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/60/37/oYYBAFneGCSAGZIuAACFmcyV3Qk823_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/60/5C/ooYBAFneGBSAVJncAAF5ekITOMk367_c_t_300_200.jpg",
+              "isNew": 0,
+              "itemType": "7",
+              "isHot": 0,
+              "itemId": "1507725803315",
+              "videoType": "",
+              "isShowActivityTag": 1,
+              "isAward": 1,
+              "tplPath": 0,
+              "playTime": "",
+              "isAttend": 0,
+              "videoDirection": "0",
+              "itemUrl": "https://m.allinmd.cn/html/m/case//2017/10/11/1507725803315.html"
+            },
+            {
+              "ownerId": "1414222889680",
+              "itemAbstract": "左侧肱骨近端骨折内固定手术一年多，左肩关节外展不到90度",
+              "actualCurrentStarLevel": "3.0",
+              "picNum": 3,
+              "browseNum": "15",
+              "currentScoreNum": "1",
+              "itemTitle": "肱骨近端骨折内固定后肩关节外展受限",
+              "activityTagColor": "",
+              "currentScore": "3.0",
+              "currentStarLevel": "3.0",
+              "ownerName": "杨世洪",
+              "activityTagName": "",
+              "picUrl": "https://img05.allinmd.cn/public1/M01/71/8E/oYYBAFqgoN2ATr7IAADxdpQ_JGk597_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/AD/ooYBAFqgoN2AD_BqAAGLjrPc2U0158_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/8F/oYYBAFqgoN6ABzGNAAZ3bJQQQhM526_c_t_300_200.jpg",
+              "isNew": 0,
+              "itemType": "7",
+              "isHot": 0,
+              "itemId": "1520476283782",
+              "videoType": "",
+              "isShowActivityTag": 0,
+              "isAward": 0,
+              "tplPath": 0,
+              "playTime": "",
+              "isAttend": 0,
+              "videoDirection": "0",
+              "itemUrl": "https://m.allinmd.cn/html/m/case//2018/03/08/1520476283782.html"
+            },
+            {
+              "ownerId": "1486907887914",
+              "itemAbstract": "机器绞伤致左手第2-5指疼痛、出血、不敢活动40分钟。",
+              "actualCurrentStarLevel": "5.0",
+              "picNum": 8,
+              "browseNum": "119",
+              "currentScoreNum": "1",
+              "itemTitle": "2-5指断指再植",
+              "activityTagColor": "#3d3fbe",
+              "currentScore": "5.0",
+              "currentStarLevel": "5.0",
+              "ownerName": "杨坤",
+              "activityTagName": "万例挑一",
+              "picUrl": "https://img05.allinmd.cn/public1/M00/62/8A/ooYBAFnhaYWAORGkAABbpljXWJo740_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/62/8A/ooYBAFnhaYWAcSdpAABbpljXWJo145_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/62/69/oYYBAFnhaYWAJYeIAABXQq8G-8o250_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/62/69/oYYBAFnhaW6AJetCAABBQm5FU-c401_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/62/69/oYYBAFnhaW6AQhmwAABFIFpWTv4506_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/62/8A/ooYBAFnhaW6ANOUaAAA_zDCwWVA836_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/62/8A/ooYBAFnhaW6ACfRYAAA8kna-vXY553_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/62/69/oYYBAFnhaW6ADyv1AAA8XGkAE7E774_c_t_300_200.jpg",
+              "isNew": 0,
+              "itemType": "7",
+              "isHot": 0,
+              "itemId": "1507944609423",
+              "videoType": "",
+              "isShowActivityTag": 1,
+              "isAward": 1,
+              "tplPath": 0,
+              "playTime": "",
+              "isAttend": 0,
+              "videoDirection": "0",
+              "itemUrl": "https://m.allinmd.cn/html/m/case//2017/10/14/1507944609423.html"
+            },
+            {
+              "ownerId": "1425705141312",
+              "itemAbstract": "摔倒致左大腿中下段疼痛，肿胀，畸形1天",
+              "actualCurrentStarLevel": "5.0",
+              "picNum": 13,
+              "browseNum": "613",
+              "currentScoreNum": "5",
+              "itemTitle": "全髋关节置换术后股骨假体周围骨折",
+              "activityTagColor": "#3d3fbe",
+              "currentScore": "25.0",
+              "currentStarLevel": "5.0",
+              "ownerName": "姜晨轶",
+              "activityTagName": "万例挑一",
+              "picUrl": "https://img05.allinmd.cn/public1/M00/57/E8/ooYBAFm6EnGAWtEEAAE6jrllQKI073_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/57/C9/oYYBAFm6Em-Abb-LAAEy7BK0bqQ996_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/57/E8/ooYBAFm6EmyAI4yzAAEOqijnVr0150_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/57/C9/oYYBAFm6EguAOHQJAADlkaxOJUg565_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/57/E8/ooYBAFm6EgmAIMh1AADTKUrcIkE644_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/57/C9/oYYBAFm6EgaABXupAAB-d247CdU464_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/57/E8/ooYBAFm6Ef-AAlkEAACsdXiI9dI316_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/57/C9/oYYBAFm6Ef2APoiNAACzpLrwgKA585_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/57/E8/ooYBAFm6EfuAZJOFAACtHRed8JY222_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/57/C9/oYYBAFm6EfeAB7KUAACRqcbr_A8641_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/57/E8/ooYBAFm6EfWAd-jhAACQdd_rehQ495_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/57/C9/oYYBAFm6EfGAZYR_AABp_lvh34Q705_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M00/57/E7/ooYBAFm6Ee6AJhqbAABp7yqxBCo473_c_t_300_200.jpg",
+              "isNew": 0,
+              "itemType": "7",
+              "isHot": 0,
+              "itemId": "1505365358095",
+              "videoType": "",
+              "isShowActivityTag": 1,
+              "isAward": 0,
+              "tplPath": 0,
+              "playTime": "",
+              "isAttend": 0,
+              "videoDirection": "0",
+              "itemUrl": "https://m.allinmd.cn/html/m/case//2017/09/14/1505365358095.html"
+            },
+            {
+              "ownerId": "1399724423303",
+              "itemAbstract": "",
+              "actualCurrentStarLevel": "4.0",
+              "picNum": 8,
+              "browseNum": "8",
+              "currentScoreNum": "1",
+              "itemTitle": "脊柱侧凸畸形",
+              "activityTagColor": "",
+              "currentScore": "4.0",
+              "currentStarLevel": "4.0",
+              "ownerName": "刘家明",
+              "activityTagName": "",
+              "picUrl": "https://img05.allinmd.cn/public1/M01/71/E4/ooYBAFql83iAcZtrAAJoBDEO8g0440_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/E5/ooYBAFql83uAJJxAAANP1NwSayw869_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/C7/oYYBAFql83qAF41SAAJWojRgsrA234_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/E5/ooYBAFql83mAIFzXAAMnXP9y5qY474_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/C7/oYYBAFql83mAdmNKAAQ9KsDiAdw294_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/C7/oYYBAFql83iAOxdAAAMZCgN7n9w006_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/E4/ooYBAFql83eAV4ddAAG78LekbZI172_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/C6/oYYBAFql83eAZEN7AAIkrGIYWsQ558_c_t_300_200.jpg",
+              "isNew": 1,
+              "itemType": "7",
+              "isHot": 0,
+              "itemId": "1520824889554",
+              "videoType": "",
+              "isShowActivityTag": 0,
+              "isAward": 0,
+              "tplPath": 0,
+              "playTime": "",
+              "isAttend": 0,
+              "videoDirection": "0",
+              "itemUrl": "https://m.allinmd.cn/html/m/case//2018/03/12/1520824889554.html"
+            },
+            {
+              "ownerId": "1419533065492",
+              "itemAbstract": "腰背部疼痛1年，感腰部歪斜",
+              "actualCurrentStarLevel": "0",
+              "picNum": 4,
+              "browseNum": "15",
+              "currentScoreNum": "0",
+              "itemTitle": "腰2椎体陈旧性骨折",
+              "activityTagColor": "",
+              "currentScore": "0",
+              "currentStarLevel": "0",
+              "ownerName": "赵磊",
+              "activityTagName": "",
+              "picUrl": "https://img05.allinmd.cn/public1/M01/71/9A/oYYBAFqhJ7yAdM-4ADaqbKMeiP8674_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/B8/ooYBAFqhJ7WAKd-bAC7aVGCE7pM761_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/9A/oYYBAFqhJ66AEraTAC3uvl0SyEM122_c_t_300_200.jpg|https://img05.allinmd.cn/public1/M01/71/B8/ooYBAFqhJ6iAD0pEACnHQrZ2VxQ434_c_t_300_200.jpg",
+              "isNew": 0,
+              "itemType": "7",
+              "isHot": 0,
+              "itemId": "1520510670335",
+              "videoType": "",
+              "isShowActivityTag": 0,
+              "isAward": 0,
+              "tplPath": 0,
+              "playTime": "",
+              "isAttend": 0,
+              "videoDirection": "0",
+              "itemUrl": "https://m.allinmd.cn/html/m/case//2018/03/08/1520510670335.html"
+            }
+          ],
+          total_count: 10
+        },
+        responseMessage: {},
+        responseCode: {},
+        responsePk: 0,
+        responseStatus: true
+      }
+    }
+    onLoad(){
+      this.contents();
+    }
+    contents(){
+      var t = this;
+      wx.request({
+        url: 'https://m.allinmd.cn/mcall/customer/recommendResourceItem/json_case/', //仅为示例，并非真实的接口地址
+        data: {
+          paramJson:{"customerId":"1399252409974","pageIndex":1,"pageSize":10,"scene":10,"sessionCustomerId":"1399252409974","platformId":"1","flag":1,"score":0}
+        },
+        method:'GET',
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success: function(res) {
+          if(res.data && res.data.responseObject && res.data.responseObject.responseData && res.data.responseObject.responseData.data_list.length){
+            t.dataList = res.data.responseObject.responseData.data_list;
+            t.$apply();
+          }
+        }
+      })
+    }
+    wxs = {
+      mywxs: mywxs
+    }
+  }
+</script>

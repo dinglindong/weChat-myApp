@@ -1,0 +1,99 @@
+<style>
+  .dynamic{
+    width:100%;
+    vertical-align: middle;
+  }
+  .dynamic .cont view{
+    display: block;
+    text-align: center;
+    color: inherit;
+    text-decoration: inherit;
+    cursor: inherit;
+    color: #5d5d5d;
+    position: relative;
+    margin: 0 auto;
+    float:left;
+    width:25%;
+  }
+  .dynamic image{
+    width:140rpx;
+    height:100rpx;
+  }
+  .dynamic text{
+    display: block;
+    font-size:26rpx;
+  }
+
+  .scroll-view_H{
+    white-space: nowrap;
+    margin-top:180rpx;
+    margin-bottom:20rpx;
+  }
+  .scroll-view-item_H{
+    display: inline-block;
+    width: 205rpx;
+    height: 114rpx;
+    margin:20rpx;
+    margin-right:20rpx;
+    border-radius:15rpx;
+  }
+  .scroll-view-item_H image{
+    width: 205rpx;
+    height: 114rpx;
+    border-radius: 15rpx;
+  }
+  .scrollCont{
+    background:#eff4f8;
+  }
+</style>
+
+<template>
+  <view class="dynamic">
+
+    <view class="cont">
+      <repeat for="{{dataList}}" key="index">
+        <view >
+          <image src="{{item}}"></image>
+          <text>每周最新</text>
+        </view>
+      </repeat>
+    </view>
+    <view class="scrollCont">
+      <scroll-view class="scroll-view_H" scroll-x="true">
+        <view>
+          <repeat for="{{scrollList}}" key="index">
+            <view class="scroll-view-item_H">
+              <image src="{{item}}"></image>
+            </view>
+          </repeat>
+        </view>
+      </scroll-view>
+    </view>
+
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  export default class DynamicEntry extends wepy.component{
+    data = {
+      dataList:[
+        "https://img04.allinmd.cn/navigation/2017/09/25/1478602359266_1506320827981.png",
+        "https://img04.allinmd.cn/navigation/2017/09/25/1502879666347_1506322577092.png",
+        "https://img04.allinmd.cn/navigation/2018/01/25/1516861385143_1516861703183.png",
+        "https://img04.allinmd.cn/navigation/2018/01/03/1514960200405_1514963195960.png"
+      ],
+      scrollList:[
+        "https://img04.allinmd.cn/navigation/2017/10/17/1508221439529_1508224029335.jpg",
+        "https://img04.allinmd.cn/navigation/2017/10/19/1508314389162_1508404474934.jpg",
+        "https://img04.allinmd.cn/navigation/2017/10/19/1508314636134_1508405092544.jpg",
+        "https://img04.allinmd.cn/navigation/2017/10/19/1508318960628_1508405217824.jpg",
+        "https://img04.allinmd.cn/navigation/2017/10/19/1508319012863_1508405171260.jpg",
+        "https://img04.allinmd.cn/navigation/2017/10/19/1508319172322_1508405198006.jpg",
+        "https://img04.allinmd.cn/navigation/2017/10/19/1508314681617_1508405149874.jpg",
+        "https://img04.allinmd.cn/navigation/2017/10/19/1508315054999_1508405236071.jpg",
+        "https://img04.allinmd.cn/navigation/2017/10/19/1508315112101_1508405253095.jpg"
+      ]
+    }
+  }
+</script>
