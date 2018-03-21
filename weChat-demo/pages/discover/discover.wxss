@@ -1,0 +1,120 @@
+.body {
+  background:#eff4f8;
+}
+.searchBox {
+    padding: 0 20rpx;
+    height: 85rpx;
+    line-height: 85rpx;
+}
+.searchIcon {
+    vertical-align: middle; 
+    margin:15rpx; 
+    float:left;
+}
+.searchText {
+    float: left;
+    width: 585rpx;
+    height: 85rpx;
+    overflow: hidden;
+    background: hsla(0,0%,80%,.2) url(//img50.allinmd.cn/index/searchBorder.png) no-repeat;
+    background-size: contain;
+    font-size: 30rpx;
+    color: #a0a0a0;
+    vertical-align: top;
+}
+.searchText text {
+    font-size:35rpx;
+    float:left;
+}
+.searchBtn {
+    float: left;
+    background: #3caefa;
+    border-radius: 0 6rpx 6rpx 0;
+    width: 125rpx;
+    height: 85rpx;
+    line-height: 85rpx;
+    font-size: 30rpx;
+    color: #fff;
+}
+
+/*banner部分  */
+.banner {
+  margin:20rpx;
+  text-align: center;
+}
+.columnList image {
+  width:200rpx;
+  height:100rpx;
+}
+.page-section-spacing{
+  margin-top: 60rpx;
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  height: 300rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  width: 205rpx;
+  height: 114rpx;
+  margin-left:20rpx;
+  border-radius:15rpx;
+}
+.scroll-view-item_H image{
+  width: 205rpx; 
+  height: 114rpx; 
+}
+
+/*列表部分  */
+.flex-wrp{
+  padding:30rpx;
+}
+.flex-item {
+  background: #fff;
+  box-shadow: 0 4px 24px 0 rgba(39,169,255,.15);
+  border-radius: 10rpx;
+  margin-bottom:30rpx;
+  padding:35rpx 0 0 26rpx;  
+}
+.flex-item image{
+  width:638rpx;
+  height: 240rpx;
+  border-radius: 7.5rpx;
+}
+.goingText {
+  font-size: 34.5rpx;
+  color: #222;
+  margin-top: 35rpx;
+  margin-bottom: 19.5rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.text {
+  font-size: 25.5rpx;
+  color: #aaa;
+}
+.hotActivity {
+  float: right;
+  background: #f8f8f8; 
+  width: 135rpx; 
+  height: 50rpx;
+  border-radius: 100rpx 0 0 0; 
+  line-height: 50rpx; 
+  font-size: 24rpx; 
+  color: #626f8c; 
+  text-align: right; 
+  vertical-align: middle;
+}
+.hotActivity .icon{
+  display: inline-block;
+  height: 17rpx;
+  width: 15rpx;
+  background: url(//img50.allinmd.cn/v3/discover/arrow_find@3x.png) no-repeat;
+  background-size: contain;
+  margin-left: 5rpx;
+}

@@ -1,0 +1,8 @@
+<!--pages/demo_view/quote/bpages/bpages.b.wxml-->
+<text>我是B页面</text>
+<!-- B.wxml -->
+<import src="../apages/apages.a.wxml"/>
+<template is="A"/>  
+<template name="B">
+  <text> B template </text>
+</template>

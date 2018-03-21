@@ -1,0 +1,14 @@
+<!--pages/demo_layer/layer.wxml-->
+
+<view class="container">
+    <dialog id='dialog' 
+      title='我是标题了' 
+      content='恭喜你，学会了小程序组件了' 
+      cancelText='知道了' 
+      confirmText='确定了'
+      bind:cancelEvent="_cancelEvent"  
+      bind:confirmEvent="_confirmEvent">
+    </dialog>
+    
+    <button type="primary" bindtap="showDialog"> ClickMe! </button>
+</view>

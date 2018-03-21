@@ -1,0 +1,25 @@
+/* pages/details/detalis.wxss */
+.string{
+  border:1px solid #f00;
+  width:500rpx;
+  height:100rpx;
+  text-align: center;
+}
+ .box{
+  width:300px;
+  height:200px;
+  overflow:hidden;
+} 
+.mycanvas{
+    /* border:1px solid #f00;   */
+   /* windth:300px;
+   height:200px;  */
+}
+.btn {
+  height:80rpx;
+  line-height: 80rpx;
+  width:400rpx;
+  border-radius:80rpx;
+  background: #f27a71;
+  margin-top:40rpx;
+}

@@ -1,0 +1,4 @@
+/* components/Banner/banner.wxss */
+.inner {
+  color: red;
+}

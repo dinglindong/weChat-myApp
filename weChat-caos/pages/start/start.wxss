@@ -1,0 +1,40 @@
+.container{
+  /* background:#f00; */
+  /* height:13000px; */
+}
+.string{
+  border:1px solid #f00;
+  width:500rpx;
+  height:100rpx;
+  text-align: center;
+}
+.footer {
+  margin:40rpx;
+  text-align: center;
+}
+.btn {
+  height:80rpx;
+  line-height: 80rpx;
+  width:400rpx;
+  border-radius:80rpx;
+  background: #f27a71;
+  margin-top:40rpx;
+}
+.section {
+  width:100%;
+}
+.section video {
+  width:100%;
+  height:224px;
+}
+.section .up,.section .down{
+  background:#000;
+  height:112px; 
+}
+.section .up{
+  position:absolute;
+  top:100px;
+}
+.section .down{
+  position:absolute;
+}

@@ -1,0 +1,24 @@
+<!--pages/demo_view/template/template.wxml-->
+
+<template name="msgItem">
+  <view>
+    <text>{{index}}: {{msg}}</text>
+    <text>Time: {{time}}</text>
+  </view>
+</template>
+
+<template is="msgItem" data="{{...item}}"/>
+
+<template name="odd">
+  <view>odd</view>
+</template>
+<template name="even">
+  <view>even</view>
+</template>
+<block wx:for="{{[1,2,3,4,5]}}"  wx:key="item">
+  <template is="{{item%2 ==0?'even':'odd'}}"></template>
+</block>
+<template is="msgItem" data="{{...item}}"/>
+<template is="msgItem" data="{{...item}}"/>
+<template is="msgItem" data="{{...item}}"/>
+<template is="msgItem" data="{{...item}}"/>

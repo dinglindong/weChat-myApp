@@ -1,0 +1,82 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/discover/discover",
+    "pages/message/message",
+    "pages/personal/persoanal",
+    "pages/logs/logs",
+    "pages/demo_view/demo_view",
+    "pages/demo_view/data/data",
+    "pages/demo_view/list/list",
+    "pages/demo_view/condition/condition",
+    "pages/demo_view/template/template",
+    "pages/demo_view/event/event",
+    "pages/demo_view/quote/quote",
+    "pages/demo_view/quote/apages/apages.a",
+    "pages/demo_view/quote/bpages/bpages.b",
+    "pages/demo_view/quote/cpages/cpages.c",
+    "pages/demo_wxs/index",
+    "components/Dialog/dialog",
+    "pages/demo_layer/layer",
+    "pages/demo_request/request",
+    "pages/scroll-view/scroll-view",
+    "pages/multimedia",
+    "pages/multimedia/multimedia"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ff0",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "唯医网",
+    "navigationStyle": "default",
+    "backgroundColor": "#0f0",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "color": "#626f8c",
+    "selectedColor": "#2899e6",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "position": "tobuttom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/mainIndex_off.png",
+        "selectedIconPath": "images/mainIndex_on.png"
+      },
+      {
+        "pagePath": "pages/discover/discover",
+        "text": "发现",
+        "iconPath": "images/discover_off01.png",
+        "selectedIconPath": "images/discover_on01.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "发布",
+        "iconPath": "images/tabbar_ release.png",
+        "selectedIconPath": "images/tabbar_ release.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "images/message_off.png",
+        "selectedIconPath": "images/message_on.png"
+      },
+      {
+        "pagePath": "pages/personal/persoanal",
+        "text": "我的",
+        "iconPath": "images/mine_off.png",
+        "selectedIconPath": "images/mine_on.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#eff4f8",
+  "backgroundColor": "#eff4f8",
+  "navigationBarTitleText": "发现页面",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
+}
