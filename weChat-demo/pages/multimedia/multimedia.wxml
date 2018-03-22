@@ -3,4 +3,4 @@
     <video src="{{src}}"></video>
     <button bindtap="bindButtonTap">获取视频</button>
 </view>
-  <button style="margin:20px" bindtap="photos">照相</button>
+

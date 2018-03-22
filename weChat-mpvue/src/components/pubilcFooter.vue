@@ -11,10 +11,9 @@
     props: ['text'],
     methods:{
       jumpMyprize(){
-        console.log(111);
-//        wx.navigateTo({
-//          url: 'pages/myPrizenum/myPrizenum',
-//        })
+        wx.navigateTo({
+          url: '../start/start'
+        })
       }
     }
   }

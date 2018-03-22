@@ -173,9 +173,14 @@ Page({
       url: '../scroll-view/scroll-view',
     })
   },
-  multimedia(){
+  video(){
     wx.navigateTo({
       url: '../multimedia/multimedia',
+    })
+  },
+  audio(){
+    wx.navigateTo({
+      url: '../audio/audio',
     })
   }
 

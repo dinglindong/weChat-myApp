@@ -21,7 +21,8 @@
     "pages/demo_request/request",
     "pages/scroll-view/scroll-view",
     "pages/multimedia",
-    "pages/multimedia/multimedia"
+    "pages/multimedia/multimedia",
+    "pages/audio/audio"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ff0",

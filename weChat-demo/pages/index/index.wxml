@@ -16,7 +16,8 @@
     </component-tag-name> -->
 
   </view>
-  <button style="margin:20px" bindtap="multimedia">多媒体</button>
+  <button style="margin:20px" bindtap="video">视频</button>
+    <button style="margin:20px" bindtap="audio">语音</button>
   <button style="margin:20px" bindtap="scrollPage" style="color:{{color}}">滚动页面</button>
   <button style="margin:20px" bindtap="jump_rquest">请求页面</button>
   <button style="margin:20px" bindtap="jump_layer">Click Layer</button>

@@ -2,6 +2,5 @@
   "usingComponents": {
     "component-tag-name": "/components/Banner/banner"
   },
-  "enablePullDownRefresh": false,
-  "disableScroll":true
+  "enablePullDownRefresh": false
 }
