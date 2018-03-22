@@ -23,15 +23,18 @@
     },
     methods:{
       bindButtonTap: function() {
-        let t = this;
-        wx.chooseVideo({
-          sourceType: ['album', 'camera'],
-          maxDuration: 10,
-          compressed:false,
-          camera: ['front', 'back'],
-          success: function (res) {
-            t.videoLink = res.tempFilePath
-          }
+//        let t = this;
+//        wx.chooseVideo({
+//          sourceType: ['album', 'camera'],
+//          maxDuration: 10,
+//          compressed:false,
+//          camera: ['front', 'back'],
+//          success: function (res) {
+//            t.videoLink = res.tempFilePath
+//          }
+//        })
+        wx.navigateTo({
+          url: '../rcord/rcord',
         })
       },
       jumpSupper(){
