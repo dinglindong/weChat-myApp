@@ -4,7 +4,7 @@
       <!--<section class="mask">-->
         <!--<image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>-->
       <!--</section>-->
-      <video id="myVideo" :src="videoLink" objectFit="cover" @bindtouchstart="touchStart" @bindtouchend="touchEnd" @click="clickBtn"></video>
+      <video id="myVideo" :src="videoLink" objectFit="cover" @click="myDB"></video>
       <section class="text">
         <p class="description">亲爱的McAdoo，录制短视频，为xxx打Call~!你还可以参与唯医抽奖活动哦！</p>
         <button class="supportBtn" @click="bindButtonTap">录制视频支持他</button>
@@ -12,6 +12,7 @@
         <button class="service" open-type="contact" session-from="weapp">CAOS2018客服</button>
       </section>
     </view>
+    <button @click="myDB">点击</button>
     <!--<div>{{message}}</div>-->
   </section>
 </template>
@@ -24,7 +25,8 @@
         videoLink:'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400',
         touchStartTime:'',
         touchEndTime:'',
-        flag:true
+        flag:true,
+        last:0//初始化上次的时间
       }
     },
     onReady: function (res) {
@@ -81,7 +83,41 @@
       /// 按钮触摸结束触发的事件
       touchEnd: function(e) {
         this.touchEndTime = e.timeStamp
-      }
+      },
+      myDB:function(e){
+        console.log(1111111111111111)
+        var c = e.timeStamp;//当前点击的时间
+
+        var L = this.last;//上一次点击的时间
+
+        if(L>0){
+
+          if(c-L<500){
+
+            console.log("作双击");
+            if(this.flag){
+              this.videoContext.play();
+              this.flag = false;
+            }else{
+              this.videoContext.pause();
+              this.flag = true;
+            }
+
+          }else{
+
+            console.log("作点击");
+
+          }
+
+        } else{
+
+          console.log("第一次点击");
+
+        }
+
+        this.last = c;
+
+      },
     },
     onShareAppMessage() {
       return {
