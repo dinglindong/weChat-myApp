@@ -45,22 +45,22 @@
         var that = this;
         console.log('点击1次');
         // 控制点击事件在350ms内触发，加这层判断是为了防止长按时会触发点击事件
-//        if (that.touchEndTime - that.touchStartTime < 350) {
-//          // 当前点击的时间
-//          var currentTime = e.timeStamp;
-//          var lastTapTime = that.lastTapTime;
-//          // 更新最后一次点击时间
-//          that.lastTapTime = currentTime;
-//          // 如果两次点击时间在300毫秒内，则认为是双击事件
-//          if (currentTime - lastTapTime < 300) {
-//            console.log('已经进入');
-//              if(this.flag){
-//                this.videoContext.play();
-//                this.flag = false;
-//              }else{
-//                this.videoContext.pause();
-//                this.flag = true;
-//              }
+        if (that.touchEndTime - that.touchStartTime < 350) {
+          // 当前点击的时间
+          var currentTime = e.timeStamp;
+          var lastTapTime = that.lastTapTime;
+          // 更新最后一次点击时间
+          that.lastTapTime = currentTime;
+          // 如果两次点击时间在300毫秒内，则认为是双击事件
+          if (currentTime - lastTapTime < 300) {
+            console.log('点击2次');
+              if(this.flag){
+                this.videoContext.play();
+                this.flag = false;
+              }else{
+                this.videoContext.pause();
+                this.flag = true;
+              }
 
 //            console.log("double tap")
 //            // 成功触发双击事件时，取消单击事件的执行
@@ -70,8 +70,8 @@
 //              content: '双击事件被触发',
 //              showCancel: false
 //            })
-//          }
-//        }
+          }
+        }
       },
       /// 按钮触摸开始触发的事件
       touchStart: function(e) {
