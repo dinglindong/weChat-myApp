@@ -4,7 +4,7 @@
       <!--<section class="mask">-->
         <!--<image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>-->
       <!--</section>-->
-      <video :src="videoLink" objectFit="cover"></video>
+      <video id="myVideo" :src="videoLink" objectFit="cover" @bindtouchstart="touchStart" @bindtouchend="touchEnd" @click="clickBtn"></video>
       <section class="text">
         <p class="description">亲爱的McAdoo，录制短视频，为xxx打Call~!你还可以参与唯医抽奖活动哦！</p>
         <button class="supportBtn" @click="bindButtonTap">录制视频支持他</button>
@@ -21,21 +21,17 @@
     data(){
       return {
         message:'你好，这个是一个start页面',
-        videoLink:'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400'
+        videoLink:'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400',
+        touchStartTime:'',
+        touchEndTime:'',
+        flag:true
       }
+    },
+    onReady: function (res) {
+      this.videoContext = wx.createVideoContext('myVideo')
     },
     methods:{
       bindButtonTap: function() {
-//        let t = this;
-//        wx.chooseVideo({
-//          sourceType: ['album', 'camera'],
-//          maxDuration: 10,
-//          compressed:false,
-//          camera: ['front', 'back'],
-//          success: function (res) {
-//            t.videoLink = res.tempFilePath
-//          }
-//        })
         wx.navigateTo({
           url: '../rcord/rcord',
         })
@@ -45,10 +41,46 @@
           url: '../courseChairman/courseChairman',
         })
       },
-      jumpService(){
-        wx.navigateTo({
-          url: '../service/service',
-        })
+      clickBtn(e){
+        var that = this;
+        console.log('点击1次');
+        // 控制点击事件在350ms内触发，加这层判断是为了防止长按时会触发点击事件
+//        if (that.touchEndTime - that.touchStartTime < 350) {
+//          // 当前点击的时间
+//          var currentTime = e.timeStamp;
+//          var lastTapTime = that.lastTapTime;
+//          // 更新最后一次点击时间
+//          that.lastTapTime = currentTime;
+//          // 如果两次点击时间在300毫秒内，则认为是双击事件
+//          if (currentTime - lastTapTime < 300) {
+//            console.log('已经进入');
+//              if(this.flag){
+//                this.videoContext.play();
+//                this.flag = false;
+//              }else{
+//                this.videoContext.pause();
+//                this.flag = true;
+//              }
+
+//            console.log("double tap")
+//            // 成功触发双击事件时，取消单击事件的执行
+//            clearTimeout(that.lastTapTimeoutFunc);
+//            wx.showModal({
+//              title: '提示',
+//              content: '双击事件被触发',
+//              showCancel: false
+//            })
+//          }
+//        }
+      },
+      /// 按钮触摸开始触发的事件
+      touchStart: function(e) {
+        this.touchStartTime = e.timeStamp
+      },
+
+      /// 按钮触摸结束触发的事件
+      touchEnd: function(e) {
+        this.touchEndTime = e.timeStamp
       }
     },
     onShareAppMessage() {
