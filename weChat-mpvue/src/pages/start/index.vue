@@ -1,12 +1,15 @@
 <template>
   <section class="container">
     <view class="section">
+      <!--<section class="mask">-->
+        <!--<image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>-->
+      <!--</section>-->
       <video :src="videoLink" objectFit="cover"></video>
       <section class="text">
         <p class="description">亲爱的McAdoo，录制短视频，为xxx打Call~!你还可以参与唯医抽奖活动哦！</p>
         <button class="supportBtn" @click="bindButtonTap">录制视频支持他</button>
         <text @click="jumpSupper">更换支持者</text>
-        <button class="service" @click="jumpService">CAOS2018客服</button>
+        <button class="service" open-type="contact" session-from="weapp">CAOS2018客服</button>
       </section>
     </view>
     <!--<div>{{message}}</div>-->
@@ -87,4 +90,16 @@
     color:#766;
     font-size:26rpx;
   }
+  /*.mask{*/
+    /*position: absolute;*/
+    /*z-index:999;*/
+    /*opacity: 0.5;*/
+    /*width:100%;*/
+    /*height:365rpx;*/
+    /*border:1px solid #f00;*/
+  /*}*/
+  /*.mask image{*/
+    /*width:100%;*/
+    /*height:365rpx;*/
+  /*}*/
 </style>

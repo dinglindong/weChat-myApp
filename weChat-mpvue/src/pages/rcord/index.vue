@@ -38,8 +38,11 @@
           compressed:false,
           camera: ['front', 'back'],
           success: function (res) {
-            t.videoLink = res.tempFilePath
+            t.videoLink = res.tempFilePath;
             t.videShow = false
+          },
+          fail:function(error){
+            t.isShow = true;
           }
         })
       },
@@ -56,7 +59,29 @@
         })
       },
       fulfil(){
-        console.log('可以了')
+        let t = this;
+        wx.showLoading({
+          title: '加载中',
+        });
+        wx.uploadFile({
+          url: 'http://m.allinmd.cn/call/qiniu/storage/saveFileToTable/', //仅为示例，非真实的接口地址
+          filePath: t.videoLink,
+          name: 'file',
+          formData:{
+            'user': 'test'
+          },
+          success: function(res){
+            var data = res.data;
+
+            setTimeout(function(){
+              wx.hideLoading()
+              wx.navigateTo({
+                url: '../fulfil/fulfil',
+              })
+            },2000);
+          }
+        })
+
       }
     }
   }
@@ -74,7 +99,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6);
   }
   .wx-dialog{
     position: fixed;
@@ -104,7 +129,8 @@
     color:#00f;
   }
   .video{
-      width:100%;
+    width:100%;
+    z-index:10;
   }
   .btn{
     position:absolute;
