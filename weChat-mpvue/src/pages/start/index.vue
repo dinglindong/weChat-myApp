@@ -4,7 +4,11 @@
       <!--<section class="mask">-->
         <!--<image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>-->
       <!--</section>-->
-      <video id="myVideo" :src="videoLink" objectFit="cover" @click="myDB"></video>
+      <video id="myVideo" :src="videoLink" objectFit="cover" @click="myDB">
+        <cover-view>
+          <cover-image></cover-image>
+        </cover-view>
+      </video>
       <section class="text">
         <p class="description">亲爱的McAdoo，录制短视频，为xxx打Call~!你还可以参与唯医抽奖活动哦！</p>
         <button class="supportBtn" @click="bindButtonTap">录制视频支持他</button>
@@ -14,6 +18,17 @@
     </view>
     <button @click="myDB">点击</button>
     <!--<div>{{message}}</div>-->
+    <!--<video id="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" >-->
+      <!--<cover-view class="controls">-->
+        <!--<cover-view class="play" @click="play">-->
+          <!--<cover-image class="img" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" />-->
+        <!--</cover-view>-->
+        <!--<cover-view class="pause" @click="pause">-->
+          <!--<cover-image class="img" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" />-->
+        <!--</cover-view>-->
+        <!--<cover-view class="time">00:00</cover-view>-->
+      <!--</cover-view>-->
+    <!--</video>-->
   </section>
 </template>
 
@@ -44,6 +59,7 @@
         })
       },
       clickBtn(e){
+        console.log(e)
         var that = this;
         console.log('点击1次');
         // 控制点击事件在350ms内触发，加这层判断是为了防止长按时会触发点击事件
@@ -79,7 +95,9 @@
       touchStart: function(e) {
         this.touchStartTime = e.timeStamp
       },
-
+      clickBat(a){
+        console.log(a);
+      },
       /// 按钮触摸结束触发的事件
       touchEnd: function(e) {
         this.touchEndTime = e.timeStamp
@@ -118,6 +136,14 @@
         this.last = c;
 
       },
+      play() {
+        console.log(1);
+        this.videoContext.play()
+      },
+      pause() {
+        console.log(2);
+        this.videoContext.pause()
+      }
     },
     onShareAppMessage() {
       return {
@@ -170,4 +196,26 @@
     /*width:100%;*/
     /*height:365rpx;*/
   /*}*/
+  .controls {
+    position: relative;
+    top: 50%;
+    height: 50px;
+    margin-top: -25px;
+    display: flex;
+  }
+  .play,.pause,.time {
+    flex: 1;
+    height: 100%;
+  }
+  .time {
+    text-align: center;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    line-height: 50px;
+  }
+  .img {
+    width: 40px;
+    height: 40px;
+    margin: 5px auto;
+  }
 </style>
