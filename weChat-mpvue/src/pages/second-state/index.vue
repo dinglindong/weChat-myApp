@@ -16,8 +16,10 @@
 <style>
   .conainter{
     width:100%;
-    padding:100rpx 40rpx;
-    border:1px solid #f00;
-
+  }
+  .conainter h3{
+    text-align: center;
+    font-size:36rpx;
+    margin-bottom: 40rpx;
   }
 </style>
