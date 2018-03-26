@@ -99,6 +99,7 @@
   }
   .content{
     width:100%;
+    margin-top:20rpx;
   }
   .content scroll-view {
     height:600rpx;
@@ -128,10 +129,13 @@
     margin-right:50rpx;
   }
   /*页脚部分*/
+  .footer{
+    position:absolute;
+    bottom:0rpx;
+  }
   .footer button {
     width:50%;
     float:left;
-    position:absolute;
-    bottom:0rpx;
+    border-radius:0rpx;
   }
 </style>
