@@ -19,8 +19,17 @@
   }
   .conainter h3{
     text-align: center;
-    font-size:36rpx;
-    margin-bottom: 40rpx;
+    font-size:40rpx;
+    margin: 60rpx;
   }
-  .conainter {}
+  .conainter p{
+    margin-left:60rpx;
+    font-size:32rpx;
+    height:50rpx;
+    line-height:50rpx;
+  }
+  .conainter button{
+    width:80%;
+    margin-top:400rpx;
+  }
 </style>
