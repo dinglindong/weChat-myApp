@@ -22,4 +22,5 @@
     font-size:36rpx;
     margin-bottom: 40rpx;
   }
+  .conainter {}
 </style>
