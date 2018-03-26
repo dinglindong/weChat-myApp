@@ -5,7 +5,7 @@
         <!--<image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>-->
       <!--</section>-->
       <video id="myVideo" :src="videoLink" objectFit="cover" @click="myDB">
-        <cover-view>
+        <cover-view class="layer">
           <cover-image></cover-image>
         </cover-view>
       </video>
@@ -217,5 +217,11 @@
     width: 40px;
     height: 40px;
     margin: 5px auto;
+  }
+  .layer{
+    width:100%;
+    height:365rpx;
+    background:#000;
+    opacity: 0.1;
   }
 </style>
