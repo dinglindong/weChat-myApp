@@ -16,19 +16,6 @@
         <button class="service" open-type="contact" session-from="weapp">CAOS2018客服</button>
       </section>
     </view>
-    <button @click="myDB">点击</button>
-    <!--<div>{{message}}</div>-->
-    <!--<video id="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" >-->
-      <!--<cover-view class="controls">-->
-        <!--<cover-view class="play" @click="play">-->
-          <!--<cover-image class="img" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" />-->
-        <!--</cover-view>-->
-        <!--<cover-view class="pause" @click="pause">-->
-          <!--<cover-image class="img" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" />-->
-        <!--</cover-view>-->
-        <!--<cover-view class="time">00:00</cover-view>-->
-      <!--</cover-view>-->
-    <!--</video>-->
   </section>
 </template>
 
@@ -41,13 +28,33 @@
         touchStartTime:'',
         touchEndTime:'',
         flag:true,
-        last:0//初始化上次的时间
+        last:0,//初始化上次的时间
+        userInfo: {}
       }
     },
     onReady: function (res) {
       this.videoContext = wx.createVideoContext('myVideo')
     },
+
+    created () {
+      // 调用应用实例的方法获取全局数据
+      this.getUserInfo()
+    },
     methods:{
+      getUserInfo () {
+        // 调用登录接口
+        wx.login({
+          success: (re) => {
+//            console.log(re)
+            wx.getUserInfo({
+              success: (res) => {
+//              console.log(res);
+                this.userInfo = res.userInfo
+              }
+            })
+          }
+        })
+      },
       bindButtonTap: function() {
         wx.navigateTo({
           url: '../rcord/rcord',

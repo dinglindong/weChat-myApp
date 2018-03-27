@@ -1,6 +1,6 @@
 <template>
   <div class="container" @click="clickHandle('test click', $event)">
-    <button @click="click">请求按钮</button>
+
     <div class="userinfo" @click="bindViewTap">
       <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
       <div class="userinfo-nickname">
@@ -8,16 +8,17 @@
       </div>
     </div>
 
-    <div class="usermotto">
-      <div class="user-motto">
-        <card :text="motto"></card>
-      </div>
-    </div>
 
-    <form class="form-container">
-      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
-    </form>
+
+    <!--<div class="usermotto">-->
+      <!--<div class="user-motto">-->
+        <!--<card :text="motto"></card>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<form class="form-container">-->
+      <!--<input type="text" class="form-control" v-model="motto" placeholder="v-model" />-->
+      <!--<input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />-->
+    <!--</form>-->
 
   </div>
 </template>

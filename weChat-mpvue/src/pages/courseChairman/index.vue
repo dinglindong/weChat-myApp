@@ -25,7 +25,7 @@
       <text>主席：王岩</text>
     </section>
     <section class="aside" @click="jumpDetails">
-      <image src=""></image>
+      <image src="https://img04.allinmd.cn/activity/20170830/1503993373800.jpg"></image>
       <text class="follow">已支持</text>
       <p>会场：脊柱脊柱脊柱分会名</p>
       <text>主席：王岩</text>
@@ -66,6 +66,7 @@
           url: '../meetingDeatils/meetingDeatils',
         })
       }
+
     }
   }
 </script>
