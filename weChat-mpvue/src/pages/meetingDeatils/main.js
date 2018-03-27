@@ -9,10 +9,6 @@ app.$mount();
 
 export default {
   config: {
-    backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'CAOS2018',
-    navigationBarTextStyle: 'black',
-    disableScroll:true
+    disableScroll:false
   }
 }

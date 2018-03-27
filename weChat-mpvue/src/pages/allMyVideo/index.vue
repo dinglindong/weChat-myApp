@@ -47,6 +47,39 @@
         </aside>
       </article>
     </section>
+
+    <section class="module" @click="jumpIndexv2">
+      <p>支持会场：XXXX中西医结合</p>
+      <article>
+        <aside class="video-module left">
+          <video :src="videoLink" objectFit="cover"></video>
+          <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+          <span>（主席名）</span>
+        </aside>
+        <aside class="video-module right">
+          <video :src="videoLink" objectFit="cover"></video>
+          <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+          <span>（用户名）</span>
+        </aside>
+      </article>
+    </section>
+
+    <section class="module" @click="jumpIndexv2">
+      <p>支持会场：XXXX中西医结合</p>
+      <article>
+        <aside class="video-module left">
+          <video :src="videoLink" objectFit="cover"></video>
+          <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+          <span>（主席名）</span>
+        </aside>
+        <aside class="video-module right">
+          <video :src="videoLink" objectFit="cover"></video>
+          <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+          <span>（用户名）</span>
+        </aside>
+      </article>
+    </section>
+
   </section>
 </template>
 
