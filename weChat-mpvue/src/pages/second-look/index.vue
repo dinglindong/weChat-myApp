@@ -1,5 +1,6 @@
 <template>
   <section class="coainter">
+
     <canvas style="width: 746rpx; height: 1200rpx;border:1px solid #f00" canvas-id="myCanvas"></canvas>
     <article class="images">
       <swiper>
@@ -18,7 +19,7 @@
         <p>CAOS2018有我更精彩</p>
       </aside>
       <aside class="code">
-        <image src="https://img04.allinmd.cn/activity/20170830/1503993373800.jpg"></image>
+        <image src="../../static/image/gh_e6aafc866fd7_258.jpg"></image>
       </aside>
     </article>
 
@@ -33,6 +34,8 @@
 </template>
 
 <script>
+//  import image from 'static/image/gh_e6aafc866fd7_258.jpg'
+//  console.log(image)
   export default{
     data(){
       return {
@@ -43,7 +46,8 @@
           "https://img04.allinmd.cn/activity/20170830/1503993373800.jpg"
         ],
         success:"",
-        data:{}
+        data:{},
+        scourse:''
       }
     },
     methods:{
@@ -72,30 +76,9 @@
           }
         });
 
+
         /*使用promise进行异步操作*/
-        var promise = new Promise((resolve, reject) => {
-          resolve (downloadFile())
-        });
-        promise.then(function(data) {
-          console.log(data); // success
-          return '测试'
-        }, function(err) {
-          console.log(err);  // 不执行
-        }).then(function(data) {
-          // 上一步的then()方法没有返回值
-          console.log('链式调用：' + data); // 链式调用：undefined
-        }).then(function(data) {
-          // ....
-        });
-        function downloadFile(){
-          wx.downloadFile({
-          url:'http://img99.allinmd.cn/ad/2017/05/15/1398_1494833535042.jpg',
-//            url:t.data.avatarUrl,
-            success:function(res){s
-               return res.tempFilePath;
-            }
-          });
-        }
+
       },
       save(){
         let t = this;
