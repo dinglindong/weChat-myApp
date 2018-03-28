@@ -13,8 +13,8 @@
 
     <article class="user">
       <aside class="userInfo">
-        <image src="https://img04.allinmd.cn/activity/20170830/1503993373800.jpg"></image>
-        <p>用户名</p>
+        <image :src="data.avatarUrl"></image>
+        <p>{{data.nickName}}</p>
         <p>CAOS2018有我更精彩</p>
       </aside>
       <aside class="code">
@@ -42,7 +42,8 @@
           "https://img04.allinmd.cn/activity/20170830/1503993373800.jpg",
           "https://img04.allinmd.cn/activity/20170830/1503993373800.jpg"
         ],
-        success:""
+        success:"",
+        data:{}
       }
     },
     methods:{
@@ -63,7 +64,8 @@
 
         var url ='';
         wx.downloadFile({
-          url:'http://img99.allinmd.cn/ad/2017/05/15/1398_1494833535042.jpg',
+//          url:'http://img99.allinmd.cn/ad/2017/05/15/1398_1494833535042.jpg',
+          url:t.data.avatarUrl,
           success:function(res){
             url = res.tempFilePath;
             var ctx = wx.createCanvasContext('myCanvas');
@@ -72,7 +74,7 @@
             ctx.drawImage(url, 305, 400, 50, 50);
             ctx.setFontSize(16);
             ctx.setTextAlign('left');
-            ctx.fillText('用户名', 80, 420);
+            ctx.fillText(t.data.nickName, 80, 420);
             ctx.fillText('CAOS2018有我更精彩', 80, 450);
             ctx.draw();
             t.save();
@@ -96,7 +98,19 @@
             })
           }
         });
+      },
+      getUserInfo(){
+        let t = this;
+        wx.getUserInfo({
+          success: function(res) {
+            t.data = res.userInfo;
+            console.log(res)
+          }
+        })
       }
+    },
+    created(){
+      this.getUserInfo()
     }
   }
 </script>
