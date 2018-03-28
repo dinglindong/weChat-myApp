@@ -53,15 +53,6 @@
           title: '正在生成图片',
           mask: true,
         });
-//        wx.getImageInfo({
-//          src: 'https://img04.allinmd.cn/activity/20170830/1503993373800.jpg',
-//          success: function (res) {
-//            console.log(res.width);
-//            console.log(res.height);
-//          }
-
-//        });
-
         var url ='';
         wx.downloadFile({
 //          url:'http://img99.allinmd.cn/ad/2017/05/15/1398_1494833535042.jpg',
@@ -80,6 +71,31 @@
             t.save();
           }
         });
+
+        /*使用promise进行异步操作*/
+        var promise = new Promise((resolve, reject) => {
+          resolve (downloadFile())
+        });
+        promise.then(function(data) {
+          console.log(data); // success
+          return '测试'
+        }, function(err) {
+          console.log(err);  // 不执行
+        }).then(function(data) {
+          // 上一步的then()方法没有返回值
+          console.log('链式调用：' + data); // 链式调用：undefined
+        }).then(function(data) {
+          // ....
+        });
+        function downloadFile(){
+          wx.downloadFile({
+          url:'http://img99.allinmd.cn/ad/2017/05/15/1398_1494833535042.jpg',
+//            url:t.data.avatarUrl,
+            success:function(res){s
+               return res.tempFilePath;
+            }
+          });
+        }
       },
       save(){
         let t = this;
@@ -88,12 +104,11 @@
           canvasId: 'myCanvas',
           success: function(res) {
             t.success = res.tempFilePath;
-            console.log(t.success)
             wx.saveImageToPhotosAlbum({
               filePath:res.tempFilePath,
               success(res) {
                 wx.hideLoading();
-                console.log('已经保存成功')
+                //console.log('已经保存成功')
               }
             })
           }
@@ -104,7 +119,7 @@
         wx.getUserInfo({
           success: function(res) {
             t.data = res.userInfo;
-            console.log(res)
+            //console.log(res)
           }
         })
       }
