@@ -25,7 +25,6 @@
 
 <script>
 import card from '@/components/card'
-
 export default {
   data () {
     return {
@@ -46,13 +45,33 @@ export default {
     getUserInfo () {
       // 调用登录接口
       wx.login({
-        success: () => {
-          wx.getUserInfo({
-            success: (res) => {
-//              console.log(res);
-              this.userInfo = res.userInfo
-            }
-          })
+        success: (data) => {
+          if(data && data.code){
+            //console.log(data.code);
+//            console.log(showRequestInfo())
+            wx.request({
+              url: 'https://caosmini.allinmd.cn/services/customer/unite/info/v1/getWeiXinSession',
+              data:{
+                code:data.code
+              },
+              method:"POST",
+              success:function(res){
+                console.log(res);
+//                var res = res.data
+//                var data = JSON.parse(res.data.trim());
+//                wx.setStorageSync('sessionid', data.sessionid);
+//                console.log(getStorageSync('sessionid'))
+              }
+            })
+          }else{
+            console.log('用户获取信息失败~',res.errMsg);
+          }
+//          wx.getUserInfo({
+//            success: (res) => {
+////              console.log(res);
+//              this.userInfo = res.userInfo
+//            }
+//          })
         }
       })
     },
