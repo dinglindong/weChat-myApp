@@ -1,4 +1,9 @@
+
 <script>
+  /*
+  * 该页面是完成的验证方式
+  *
+  * */
   import utils from './utils/request'
   const PATH = {
     verifyInfo:'https://caosmini.allinmd.cn/services/customer/unite/info/v1/getWeiXinSession',

@@ -69,7 +69,21 @@
           current: current, // 当前显示图片的http链接
           urls: t.imgaList // 需要预览的图片http链接列表
         })
+      },
+      upload(){
+        var timestamp = new Date().getTime();
+        wx.request({
+          url: 'https://wx.jfoto.cn/api/image/list',
+          data:{
+            galleryid:'813947',
+            order:'测试',
+            lasttime:timestamp
+          }
+        })
       }
+    },
+    mounted(){
+      this.upload();
     }
   }
 </script>

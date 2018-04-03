@@ -17,12 +17,12 @@ export default {
             success:function(res){
               var APPID = 'wxaeb208664e642355';
               var SECRET = '1275d4508ae8d611c9ba026ac01ff26f';
-              wx.request({
-                url: 'https://api.weixin.qq.com/sns/jscode2session?appid='+APPID+'&secret='+SECRET+'&js_code='+loginRes.code+'&grant_type=authorization_code',
-                success:function(response){
-                  console.log('openid:' + response.data.openid);
-                },
-              })
+              //wx.request({
+              //  url: 'https://api.weixin.qq.com/sns/jscode2session?appid='+APPID+'&secret='+SECRET+'&js_code='+loginRes.code+'&grant_type=authorization_code',
+              //  success:function(response){
+              //    console.log('openid:' + response.data.openid);
+              //  },
+              //})
             }
           })
         }
