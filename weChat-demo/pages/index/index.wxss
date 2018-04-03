@@ -1,11 +1,11 @@
 /**index.wxss**/
 
 .containers{
-  height:100%;
   width:100%;
+  height:1011rpx;
   overflow: auto;
   background:#16800c;
-  padding-top:100rpx;
+  padding-top:100rpx; 
 }
 .containers button{
   width:167.5rpx;

@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="containers">
-  <button bindtap="jump_view">逻辑层</button>
+  <button bindtap="jump_view">视图层</button>
   <button bindtap="video">视频</button>
   <button bindtap="audio">语音</button>
   <button bindtap="scrollPage">滚动H</button>
@@ -11,9 +11,9 @@
   <button>逻辑层</button>
   <button>视图层</button>
 
-  <button>上滑加载</button>
-  <button bindtap="updown">下拉刷新</button>
-  <button open-type="share">Share外置</button>
+  <button>上滑</button>
+  <button bindtap="updown">下拉</button>
+  <button open-type="share">Share</button>
 
   <view>
     下面是组件

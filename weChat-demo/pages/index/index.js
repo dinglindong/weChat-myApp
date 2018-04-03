@@ -142,7 +142,7 @@ Page({
     comm.sayGoodbye('丁林冬');
   },
   jump_view(){
-    wx.switchTab({
+    wx.navigateTo({
       url: '../demo_view/demo_view'
     })
   },
