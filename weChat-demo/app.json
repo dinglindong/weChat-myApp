@@ -1,4 +1,4 @@
-{
+  {
   "pages": [
     "pages/index/index",
     "pages/discover/discover",
@@ -25,11 +25,11 @@
     "pages/audio/audio"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#ff0",
-    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#16800c",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "唯医网",
     "navigationStyle": "default",
-    "backgroundColor": "#0f0",
+    "backgroundColor": "#aaa",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": true,
     "onReachBottomDistance": 50

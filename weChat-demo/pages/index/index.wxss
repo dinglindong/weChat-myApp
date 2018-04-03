@@ -3,9 +3,8 @@
 .containers{
   height:100%;
   width:100%;
-  border:1px solid #f00;
   overflow: auto;
-  background:forestgreen;
+  background:#16800c;
   padding-top:100rpx;
 }
 .containers button{
