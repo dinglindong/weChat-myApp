@@ -12,8 +12,8 @@
   <button>视图层</button>
 
   <button>上滑加载</button>
-  <button>下拉刷新</button>
-  <button>Share外置</button>
+  <button bindtap="updown">下拉刷新</button>
+  <button open-type="share">Share外置</button>
 
   <view>
     下面是组件

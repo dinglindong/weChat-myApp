@@ -68,7 +68,8 @@ Page({
   },
   onReady: function () {
     // console.log('只读可以吗？');
-    // Do something when page ready.
+    //可以获取当前页面的路径
+    console.log(this.route);
   },
   onShow: function () {
     // console.log('页面显示执行可以吗？');
@@ -82,44 +83,36 @@ Page({
     // console.log('页面卸载可以吗？');
     // Do something when page close.
   },
+  //监听下拉刷新函数
   onPullDownRefresh: function () {
     console.log('监听用户下拉动作可以吗？');
     this.setData({
       motto: '下拉完成'
     })
-    // Do something when pull down.
   },
+  //监听上滑加载数据函数
   onReachBottom: function () {
     console.log('上拉触底事件的处理函数可以吗？');
     this.setData({
       motto: '上滑完成'
     })
-    // Do something when page reach bottom.
   },
+  //开启左上角分享功能
   onShareAppMessage: function () {
     return {
       "title":"分享转发666",
       "path": "pages/discover/discover"
     }
-    // console.log('只有定义了该函数右上角才有"转发"按钮样式');
-    // 方法内返回一个Object{title:'',path:''}
   },
+  //监听页面滚动
   onPageScroll: function () {
-    // console.log('滚动触发事件的处理函数可以吗？');
-    // Do something when page scroll
+    console.log('滚动触发事件的处理函数可以吗？');
   },
   onTabItemTap(item) {
     // console.log('该问题暂时无法解决，无报错无展示');
     // console.log(item.index)
     // console.log(item.pagePath)
     // console.log(item.text)
-  },
-  getUserInfo: function(e) {
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
   },
   viewTap(){
     console.log('页面自定义事件，已经执行了！');
@@ -149,7 +142,7 @@ Page({
     comm.sayGoodbye('丁林冬');
   },
   jump_view(){
-    wx.navigateTo({
+    wx.switchTab({
       url: '../demo_view/demo_view'
     })
   },
