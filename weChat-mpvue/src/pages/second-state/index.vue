@@ -9,7 +9,43 @@
 
 <script>
   export default {
+    data(){
+      return {
+        data:''
+      }
+    },
+    methods:{
+      ajax(){
+        wx.request({
+          //该请求地址是即享图片的请求的地址，模拟测试一下请求200
+          url: 'https://wx.jfoto.cn/api/image/list',
+          data:{
+            galleryid:'813947',
+            order:'测试',
+            lasttime:11
+          },
+          method:"GET",  //默认位GET请求
+          success: function(res) {
+                wx.getImageInfo({
+                  //获取图片的信息必须是https/指定域名
+                  src: 'https://img05.allinmd.cn/public1/M00/54/50/ooYBAFmeQyuAM8NEADmmFhecazw032_c_t_300_200.jpg',
+                  success:function(data){
+                    console.log('请求成功',data);
+                  },
+                  fail:function(){
+                    console.log('请求失败~')
+                  }
+                })
+          },
+          fail: function(err) {
 
+          }
+        })
+      }
+    },
+    mounted(){
+//      this.ajax();
+    }
   }
 </script>
 
