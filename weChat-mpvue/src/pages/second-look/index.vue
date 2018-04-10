@@ -66,18 +66,51 @@
             var ctx = wx.createCanvasContext('myCanvas');
             ctx.drawImage(url, 0, 0, 375, 300);
             ctx.drawImage(url, 20, 400, 50, 50);
+
+            ctx.beginPath();
+//            ctx.fillStyle = '#93BF55';
+            ctx.lineWidth= 5;
+//            ctx.strokeStyle = '#93BF55';
+            ctx.arc(45,425,30,0,Math.PI*2,true);
+            ctx.stroke();
+            ctx.closePath();
+
             ctx.drawImage(url, 305, 400, 50, 50);
+
+            ctx.beginPath();
+//            ctx.fillStyle = '#93BF55';
+            ctx.lineWidth= 5;
+//            ctx.strokeStyle = '#93BF55';
+            ctx.strokeRect(305,400,50,50);
+            ctx.stroke();
+            ctx.closePath();
+
             ctx.setFontSize(16);
             ctx.setTextAlign('left');
-            ctx.fillText(t.data.nickName, 80, 420);
             ctx.fillText('CAOS2018有我更精彩', 80, 450);
+            ctx.font = "bold 20px Arial";
+            ctx.fillText(t.data.nickName, 80, 420);
             ctx.draw();
             t.save();
           }
         });
 
 
-        /*使用promise进行异步操作*/
+        /*画圆的方法*/
+        function drawCircle(circleObj) {
+          var ctx = circleObj.ctx;
+          ctx.beginPath();
+          ctx.arc(circleObj.x, circleObj.y, circleObj.radius, circleObj.startAngle, circleObj.endAngle, true); //true表示逆时针绘画
+          //设定曲线粗细度
+          ctx.lineWidth = circleObj.lineWidth;
+          //给曲线着色
+          ctx.strokeStyle = circleObj.color;
+          //连接处样式
+          ctx.lineCap = 'round';
+          //给环着色
+          ctx.stroke();
+          ctx.closePath();
+        }
 
       },
       save(){
