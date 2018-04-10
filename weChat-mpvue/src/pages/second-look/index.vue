@@ -29,6 +29,7 @@
 
     <article class="savephoto">
       <button @click="savePhoto">保存到相册</button>
+      <button open-type="launchApp" app-parameter="wechat" binderror="launchAppError">打开APP</button>
     </article>
   </section>
 </template>
@@ -59,13 +60,24 @@
         });
         var url ='';
         wx.downloadFile({
-          url:'http://img99.allinmd.cn/ad/2017/05/15/1398_1494833535042.jpg',
+          url:'https://m.allinmd.cn/images/img50/stepOne/videoAds.jpg',
 //          url:t.data.avatarUrl,
           success:function(res){
             url = res.tempFilePath;
             var ctx = wx.createCanvasContext('myCanvas');
+
+
+            ctx.fillStyle = '#fff';
+            ctx.fillRect(0, 0, 375, 1000);
+
+            ctx.save(); // 保存当前ctx的状态
+            ctx.arc(45,425,30,0,Math.PI*2,true); //画出圆
+            ctx.clip(); //裁剪上面的圆形
+            ctx.drawImage(url, 20, 400, 50, 50); // 在刚刚裁剪的园上画图
+            ctx.restore(); // 还原状态
+
             ctx.drawImage(url, 0, 0, 375, 300);
-            ctx.drawImage(url, 20, 400, 50, 50);
+
 
             ctx.beginPath();
 //            ctx.fillStyle = '#93BF55';
@@ -74,8 +86,7 @@
             ctx.arc(45,425,30,0,Math.PI*2,true);
             ctx.stroke();
             ctx.closePath();
-
-            ctx.drawImage(url, 305, 400, 50, 50);
+            
 
             ctx.beginPath();
 //            ctx.fillStyle = '#93BF55';
@@ -90,28 +101,11 @@
             ctx.fillText('CAOS2018有我更精彩', 80, 450);
             ctx.font = "bold 20px Arial";
             ctx.fillText(t.data.nickName, 80, 420);
+
             ctx.draw();
             t.save();
           }
         });
-
-
-        /*画圆的方法*/
-        function drawCircle(circleObj) {
-          var ctx = circleObj.ctx;
-          ctx.beginPath();
-          ctx.arc(circleObj.x, circleObj.y, circleObj.radius, circleObj.startAngle, circleObj.endAngle, true); //true表示逆时针绘画
-          //设定曲线粗细度
-          ctx.lineWidth = circleObj.lineWidth;
-          //给曲线着色
-          ctx.strokeStyle = circleObj.color;
-          //连接处样式
-          ctx.lineCap = 'round';
-          //给环着色
-          ctx.stroke();
-          ctx.closePath();
-        }
-
       },
       save(){
         let t = this;
