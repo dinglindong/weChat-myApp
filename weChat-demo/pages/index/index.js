@@ -175,6 +175,11 @@ Page({
     wx.navigateTo({
       url: '../audio/audio',
     })
+  },
+  scroll(){
+    wx.navigateTo({
+      url: '../scroll/scroll',
+    })
   }
 
 })

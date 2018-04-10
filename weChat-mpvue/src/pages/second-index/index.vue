@@ -75,11 +75,15 @@
         wx.request({
           url: 'https://wx.jfoto.cn/api/image/list',
           data:{
-            galleryid:'813947',
-            order:'测试',
-            lasttime:timestamp
+            galleryid: '740697',
+            sorttype: 'shoottime',
+            order: 'desc',
+            lasttime: 9007199254740991
           }
-        })
+        }) ;
+        wx.request({
+          url: 'https://wx.jfoto.cn/api/gallery/740697',
+        });
       }
     },
     mounted(){

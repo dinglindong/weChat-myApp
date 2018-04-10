@@ -1,0 +1,4 @@
+<!--pages/scroll/scroll.wxml-->
+<view class="coainters" bindtap = "handletap" bindtouchstart = "handletouchtart" bindtouchmove="handletouchmove" bindtouchend="handletouchend">
+  <view id="id" class = "ball" hidden="{{isShow}}">客服</view>
+</view>

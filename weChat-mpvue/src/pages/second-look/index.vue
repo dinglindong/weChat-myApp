@@ -59,8 +59,8 @@
         });
         var url ='';
         wx.downloadFile({
-//          url:'http://img99.allinmd.cn/ad/2017/05/15/1398_1494833535042.jpg',
-          url:t.data.avatarUrl,
+          url:'http://img99.allinmd.cn/ad/2017/05/15/1398_1494833535042.jpg',
+//          url:t.data.avatarUrl,
           success:function(res){
             url = res.tempFilePath;
             var ctx = wx.createCanvasContext('myCanvas');

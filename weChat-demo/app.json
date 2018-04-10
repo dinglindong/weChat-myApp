@@ -1,4 +1,4 @@
-  {
+{
   "pages": [
     "pages/index/index",
     "pages/discover/discover",
@@ -22,7 +22,8 @@
     "pages/scroll-view/scroll-view",
     "pages/multimedia",
     "pages/multimedia/multimedia",
-    "pages/audio/audio"
+    "pages/audio/audio",
+    "pages/scroll/scroll"
   ],
   "window": {
     "navigationBarBackgroundColor": "#16800c",

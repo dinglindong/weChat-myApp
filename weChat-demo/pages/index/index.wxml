@@ -9,7 +9,7 @@
   <button bindtap="jump_wxs">Wxs</button>
   <button>API</button>
   <button>逻辑层</button>
-  <button>视图层</button>
+  <button bindtap="scroll">滑动</button>
 
   <button>上滑</button>
   <button bindtap="updown">下拉</button>
