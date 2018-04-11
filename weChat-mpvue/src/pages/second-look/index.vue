@@ -1,37 +1,38 @@
 <template>
   <section class="coainter">
 
-    <canvas style="width: 746rpx; height: 1200rpx;border:1px solid #f00" canvas-id="myCanvas"></canvas>
-    <article class="images">
-      <swiper>
-        <block v-for="(v,i) in dataList" :key="i">
-          <swiper-item>
-            <image :src="v" class="slide-image"/>
-          </swiper-item>
-        </block>
-      </swiper>
-    </article>
+    <canvas class="can" style="width: 746rpx; height: 1200rpx;border:1px solid #f00" canvas-id="myCanvas"></canvas>
+      <article class="images">
+        <swiper>
+          <block v-for="(v,i) in dataList" :key="i">
+            <swiper-item>
+              <image :src="v" class="slide-image"/>
+            </swiper-item>
+          </block>
+        </swiper>
+      </article>
 
-    <article class="user">
-      <aside class="userInfo">
-        <image :src="data.avatarUrl"></image>
-        <p>{{data.nickName}}</p>
-        <p>CAOS2018有我更精彩</p>
-      </aside>
-      <aside class="code">
-        <image src="../../static/image/gh_e6aafc866fd7_258.jpg"></image>
-      </aside>
-    </article>
+      <article class="user">
+        <aside class="userInfo">
+          <image :src="data.avatarUrl"></image>
+          <p>{{data.nickName}}</p>
+          <p>CAOS2018有我更精彩</p>
+        </aside>
+        <aside class="code">
+          <image src="../../static/image/gh_e6aafc866fd7_258.jpg"></image>
+        </aside>
+      </article>
 
-    <section style="width:100%;height:800rpx;border:1px solid #f00">
-      <image :src="success"></image>
+      <section style="width:100%;height:800rpx;border:1px solid #f00">
+        <image :src="success"></image>
+      </section>
+
+      <article class="savephoto">
+        <button @click="savePhoto">保存到相册</button>
+        <button open-type="launchApp" app-parameter="wechat" binderror="launchAppError">打开APP</button>
+      </article>
     </section>
 
-    <article class="savephoto">
-      <button @click="savePhoto">保存到相册</button>
-      <button open-type="launchApp" app-parameter="wechat" binderror="launchAppError">打开APP</button>
-    </article>
-  </section>
 </template>
 
 <script>
@@ -191,4 +192,11 @@
     width:100%;
     bottom:0rpx;
   }
+  /*.can{*/
+    /*z-index:1;*/
+    /*!*display:none;*!*/
+  /*}*/
+  /*.box{*/
+    /*z-index:99*/
+  /*}*/
 </style>

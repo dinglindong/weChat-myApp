@@ -66,8 +66,8 @@
       previewImage: function (current) {
         let t = this;
         wx.previewImage({
-          current: current, // 当前显示图片的http链接
-          urls: t.imgaList // 需要预览的图片http链接列表
+          current: current,  // 当前显示图片的http链接
+          urls: t.imgaList   // 需要预览的图片http链接列表
         })
       },
       upload(){

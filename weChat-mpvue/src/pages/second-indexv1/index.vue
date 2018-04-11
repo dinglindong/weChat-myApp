@@ -1,7 +1,11 @@
 <template>
   <section class="coainter">
     <button @click="details(dataList1.id)">{{dataList1.name}}</button>
-    <button @click="details(dataList1.id)">{{dataList2.name}}</button>
+    <button @click="details(dataList2.id)">{{dataList2.name}}</button>
+    <button @click="details(dataList1.id)">{{dataList1.name}}</button>
+    <button @click="details(dataList2.id)">{{dataList2.name}}</button>
+    <button @click="details(dataList1.id)">{{dataList1.name}}</button>
+    <button @click="details(dataList2.id)">{{dataList2.name}}</button>
   </section>
 </template>
 
@@ -15,9 +19,6 @@
     },
     mounted(){
       this.list();
-    },
-    onLoad(option){
-      console.log(option)
     },
     methods:{
       list(){
@@ -35,9 +36,9 @@
           }
         });
       },
-      details(id){
+      details(id,){
         wx.navigateTo({
-          url: "../second-indexDetails/second-indexDetails",
+          url: "../second-indexDetails/second-indexDetails?gallery="+id+"",
         })
       }
     }
