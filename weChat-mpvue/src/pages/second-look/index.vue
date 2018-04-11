@@ -86,7 +86,7 @@
             ctx.arc(45,425,30,0,Math.PI*2,true);
             ctx.stroke();
             ctx.closePath();
-            
+
 
             ctx.beginPath();
 //            ctx.fillStyle = '#93BF55';
