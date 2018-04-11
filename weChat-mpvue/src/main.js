@@ -11,12 +11,12 @@ export default {
   // 这个字段走 app.json
   config: {
     pages: [
-      "^pages/second-indexnew/second-indexnew"
+      "^pages/second-look/second-look"
     ], // 页面前带有 ^ 符号的，会被编译成首页，其他页面可以选填，我们会自动把 webpack entry 里面的入口页面加进去
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'CAOS2018~',
+      navigationBarTitleText: 'CAOS2018',
       navigationBarTextStyle: 'black',
       disableScroll:true
     }

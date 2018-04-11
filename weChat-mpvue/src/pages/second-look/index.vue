@@ -38,6 +38,8 @@
 <script>
 //  import image from 'static/image/gh_e6aafc866fd7_258.jpg'
 //  console.log(image)
+import html2canvas from 'html2canvas';
+console.log(html2canvas)
   export default{
     data(){
       return {
@@ -137,6 +139,9 @@
     },
     created(){
       this.getUserInfo()
+//      html2canvas(document.Page).then(function(canvas) {
+//        document.Page .appendChild(canvas);
+//      });
     }
   }
 </script>

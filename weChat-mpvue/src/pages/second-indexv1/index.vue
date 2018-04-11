@@ -1,6 +1,6 @@
 <template>
   <section class="coainter">
-    <button @click="details(dataList1.id)">{{dataList1.name}}</button>
+    <button @click="details(dataList1.id)">{{dataList1.name}}{{dataList1.id}}</button>
     <button @click="details(dataList2.id)">{{dataList2.name}}</button>
     <button @click="details(dataList1.id)">{{dataList1.name}}</button>
     <button @click="details(dataList2.id)">{{dataList2.name}}</button>
