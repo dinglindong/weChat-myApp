@@ -1,5 +1,5 @@
 /**
- * Create By DingLindong on 2018/3/22
+ * Create By Ding on 2018/3/22
  */
 import Vue from 'vue'
 import App from './index'

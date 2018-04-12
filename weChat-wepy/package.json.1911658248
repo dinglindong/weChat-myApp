@@ -14,7 +14,7 @@
     "module-a": false,
     "./src/components/list": "./src/components/wepy-list.wpy"
   },
-  "author": "dinglindong <258231674@qq.com>",
+  "author": "ding <258231674@qq.com>",
   "license": "MIT",
   "dependencies": {
     "wepy": "^1.7.1",
