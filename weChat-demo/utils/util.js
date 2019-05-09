@@ -22,7 +22,7 @@ const formatNumber = n => {
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 
 /*
-* author： Lindong Ding
+* author： Lnden
 * feature： 获取当前页面的url和带参数的url,微信给我们暴露的getCurrentPages对象util.getCurrentPages()
 *
 */
